@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کارگەها جامی - Glass Factory</title>
+    <style>
+        /* ستایل و رەنگێن سایتێ */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* تێکهەلکرنا رەنگێن جامی: شینێ ئەسمانی، قەهوایی، و کەسکێ مات */
+            background: linear-gradient(135deg, #a8dadc, #457b9d, #2a9d8f, #8d99ae);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1); /* شووشەی مات */
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        p { font-size: 1.2rem; margin-bottom: 30px; }
+
+        /* مینیویا زمانان */
+        .lang-menu {
+            margin-bottom: 20px;
+        }
+
+        select {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background: rgba(255, 255, 255, 0.8);
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .enter-btn {
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            background-color: #1d3557;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .enter-btn:hover {
+            background-color: #e63946;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="lang-menu">
+        <select id="langSelect" onchange="changeLanguage()">
+            <option value="badini">کوردی (بادینی)</option>
+            <option value="sorani">کوردی (سورانی)</option>
+            <option value="turkish">Türkçe</option>
+            <option value="arabic">العربية</option>
+            <option value="english">English</option>
+        </select>
+    </div>
+
+    <h1 id="welcome-title">ب خێرهاتی بۆ کارگەها مە</h1>
+    <p id="welcome-desc">تەرهەڤی بۆ چوونە ژوورێ؟</p>
+    
+    <button class="enter-btn" id="enter-btn">چوونە ژوورێ</button>
+</div>
+
+<script>
+    const translations = {
+        badini: {
+            title: "ب خێرهاتی بۆ کارگەها مە",
+            desc: "تەرهەڤی بۆ چوونە ژوورێ؟",
+            btn: "چوونە ژوورێ",
+            dir: "rtl"
+        },
+        sorani: {
+            title: "بەخێربێیت بۆ کارگەکەی ئێمە",
+            desc: "ئامادەیت بۆ چوونە ژوورەوە؟",
+            btn: "چوونە ژوورەوە",
+            dir: "rtl"
+        },
+        turkish: {
+            title: "Fabrikamıza Hoş Geldiniz",
+            desc: "İçeri girmeye hazır mısınız?",
+            btn: "Giriş Yap",
+            dir: "ltr"
+        },
+        arabic: {
+            title: "أهلاً بكم في مصنعنا",
+            desc: "هل أنت مستعد للدخول؟",
+            btn: "دخول",
+            dir: "rtl"
+        },
+        english: {
+            title: "Welcome to Our Factory",
+            desc: "Are you ready to enter?",
+            btn: "Enter Now",
+            dir: "ltr"
+        }
+    };
+
+    function changeLanguage() {
+        const lang = document.getElementById('langSelect').value;
+        const content = translations[lang];
+        
+        document.getElementById('welcome-title').innerText = content.title;
+        document.getElementById('welcome-desc').innerText = content.desc;
+        document.getElementById('enter-btn').innerText = content.btn;
+        document.body.dir = content.dir;
+    }
+</script>
+
+</body>
+</html>
