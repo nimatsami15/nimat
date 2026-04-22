@@ -1,0 +1,1747 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>JAZAN GROUP — Leaders in Glass &amp; Plastic Industry</title>
+<style>
+/* Arabic/Kurdish font loaded separately */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600;700&family=Cinzel:wght@400;600&family=Noto+Sans+Arabic:wght@300;400;500;600;700&family=Vazirmatn:wght@300;400;500;600;700&display=swap');
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --cy:#00E5FF; --cy2:#00B4CC; --cy3:rgba(0,229,255,.15); --cy4:rgba(0,229,255,.07);
+  --gold:#FFD700; --gold2:rgba(255,215,0,.15); --gold3:rgba(255,215,0,.07);
+  --bg:#030C18; --bg2:#071525; --bg3:#0A1E30; --bg4:#040E1A;
+  --glass:rgba(255,255,255,.05); --border:rgba(0,229,255,.20); --bdr2:rgba(0,229,255,.40);
+  --txt:#E0F4FF; --txt2:#7BB8D0; --txt3:#3A6A82;
+  --font-en:'Exo 2',sans-serif;
+  --font-ar:'Noto Sans Arabic','Vazirmatn',sans-serif;
+}
+
+html{scroll-behavior:smooth}
+body{font-family:var(--font-en);background:var(--bg);color:var(--txt);overflow-x:hidden;min-height:100vh}
+[lang="ar"] body,[lang="ku"] body,.rtl-text{font-family:var(--font-ar)}
+
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--bdr2);border-radius:3px}
+
+/* ── KEYFRAMES ── */
+@keyframes hscan{0%{top:-2px}100%{top:100%}}
+@keyframes gpscan{0%,100%{top:5%}50%{top:88%}}
+@keyframes bpulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.4)}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes bglow{0%,100%{border-color:rgba(0,229,255,.2)}50%{border-color:rgba(0,229,255,.55)}}
+@keyframes devGlow{0%,100%{text-shadow:0 0 8px rgba(0,229,255,.4),0 0 20px rgba(255,215,0,.2)}50%{text-shadow:0 0 14px rgba(0,229,255,.7),0 0 32px rgba(255,215,0,.4)}}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes waPulse{0%,100%{box-shadow:0 0 0 0 rgba(18,140,126,.5)}70%{box-shadow:0 0 0 10px rgba(18,140,126,0)}}
+@keyframes rowIn{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:translateX(0)}}
+@keyframes shimmerIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes goldPulse{0%,100%{opacity:.7}50%{opacity:1}}
+@keyframes scanLine{0%{transform:translateY(-100%)}100%{transform:translateY(100vh)}}
+
+/* ── PAGE VIEWS ── */
+.page-view{display:none}
+.page-view.active{display:block;animation:fadeIn .35s ease both}
+
+/* ══════════════════════════════
+   NAV
+══════════════════════════════ */
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 36px;height:60px;
+  background:rgba(3,12,24,.97);border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:100;
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  gap:12px;
+}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;flex-shrink:0;cursor:pointer}
+.logo-icon{width:36px;height:36px;background:var(--cy3);border:1px solid var(--bdr2);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;animation:bglow 3s ease-in-out infinite}
+.logo-text{font-family:'Rajdhani',sans-serif;font-size:19px;font-weight:700;letter-spacing:.12em;color:var(--cy);white-space:nowrap}
+.logo-sub{font-size:8px;color:var(--txt2);letter-spacing:.18em;display:block;margin-top:-2px;font-weight:400;white-space:nowrap}
+
+/* Developer signature — the prestigious version */
+.nav-dev-sig{
+  display:flex;flex-direction:column;align-items:center;gap:1px;
+  border-inline:1px solid rgba(0,229,255,.12);
+  padding-inline:16px;flex-shrink:0;
+}
+.nav-dev-label{font-size:8px;letter-spacing:.18em;color:var(--txt3);font-family:var(--font-en);text-transform:uppercase;opacity:.7}
+.nav-dev-name{
+  font-family:'Cinzel',serif;font-size:11px;font-weight:600;
+  letter-spacing:.12em;
+  background:linear-gradient(90deg,var(--cy),var(--gold),var(--cy));
+  background-size:200% auto;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  animation:devGlow 3s ease-in-out infinite;
+  white-space:nowrap;
+}
+.nav-dev-role{font-size:7px;color:var(--txt3);letter-spacing:.14em;font-family:var(--font-en);opacity:.6;white-space:nowrap}
+
+/* Nav tabs */
+.nav-tabs{display:flex;gap:2px;align-items:center}
+.nav-tab{background:transparent;border:none;color:var(--txt2);padding:7px 14px;border-radius:6px;font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;letter-spacing:.04em;font-family:var(--font-en);white-space:nowrap;position:relative}
+.nav-tab::after{content:'';position:absolute;bottom:-1px;left:50%;right:50%;height:2px;background:var(--cy);border-radius:2px;transition:left .2s,right .2s}
+.nav-tab:hover{color:var(--txt);background:rgba(0,229,255,.05)}
+.nav-tab.active{color:var(--cy);font-weight:600}
+.nav-tab.active::after{left:10px;right:10px}
+
+.nav-right{display:flex;align-items:center;gap:10px;flex-wrap:nowrap;flex-shrink:0}
+.lang-switcher{display:flex;gap:4px;flex-wrap:nowrap}
+.lang-btn{background:transparent;border:1px solid var(--border);color:var(--txt2);padding:4px 10px;border-radius:20px;font-size:11px;cursor:pointer;transition:all .2s;font-family:var(--font-en);font-weight:500;white-space:nowrap;line-height:1.4}
+.lang-btn.active{background:var(--cy3);border-color:var(--cy);color:var(--cy);font-weight:600}
+.lang-btn:hover:not(.active){border-color:var(--cy2);color:var(--txt)}
+.nav-cta{background:transparent;border:1px solid var(--cy);color:var(--cy);padding:6px 16px;border-radius:6px;font-size:12px;cursor:pointer;letter-spacing:.06em;font-family:var(--font-en);font-weight:600;transition:all .2s;white-space:nowrap;line-height:1.4}
+.nav-cta:hover{background:var(--cy3)}
+
+@media(max-width:1200px){.nav-dev-sig{display:none}}
+@media(max-width:860px){.nav-tabs{display:none}}
+@media(max-width:600px){.nav{padding:0 16px}.nav-cta{display:none}}
+
+/* Mobile tab bar */
+.mobile-tabs{display:none;background:rgba(3,12,24,.97);border-bottom:1px solid var(--border);overflow-x:auto;-webkit-overflow-scrolling:touch}
+.mobile-tabs::-webkit-scrollbar{height:0}
+.mobile-tabs-inner{display:flex;min-width:max-content}
+.mobile-tab{background:transparent;border:none;color:var(--txt2);padding:11px 18px;font-size:12px;font-weight:500;cursor:pointer;transition:all .2s;font-family:var(--font-en);white-space:nowrap;border-bottom:2px solid transparent}
+.mobile-tab.active{color:var(--cy);border-bottom-color:var(--cy);font-weight:600}
+@media(max-width:860px){.mobile-tabs{display:block}}
+
+/* ══════════════════════════════
+   SECTION COMMONS
+══════════════════════════════ */
+section{padding:70px 40px}
+@media(max-width:768px){section{padding:50px 20px}}
+.section-lbl{font-size:11px;letter-spacing:.16em;color:var(--cy);font-weight:700;margin-bottom:8px}
+.section-title{font-family:'Rajdhani',sans-serif;font-size:clamp(22px,3.5vw,36px);font-weight:700;margin-bottom:10px;letter-spacing:.02em}
+.section-sub{font-size:14px;color:var(--txt2);line-height:1.75;max-width:560px;font-weight:300}
+.section-hdr{margin-bottom:44px}
+
+/* BUTTONS */
+.btn-primary{background:var(--cy);color:#020A14;padding:12px 26px;border-radius:8px;font-size:14px;font-weight:700;border:none;cursor:pointer;letter-spacing:.05em;transition:all .2s;font-family:var(--font-en);white-space:nowrap}
+.btn-primary:hover{background:#33EEFF;transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--cy);border:1px solid var(--bdr2);padding:12px 26px;border-radius:8px;font-size:14px;cursor:pointer;letter-spacing:.05em;transition:all .2s;font-family:var(--font-en);font-weight:500;white-space:nowrap}
+.btn-outline:hover{background:var(--cy3)}
+
+/* ══════════════════════════════
+   HOME: HERO
+══════════════════════════════ */
+.hero{padding:90px 40px 80px;position:relative;overflow:hidden;border-bottom:1px solid var(--border);background:linear-gradient(160deg,#040E1A 0%,#071525 60%,#030C18 100%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.03) 1px,transparent 1px);background-size:52px 52px;pointer-events:none}
+.hero-vignette{position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(0,229,255,.04) 0%,transparent 65%);pointer-events:none}
+.hero-scan{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--cy),transparent);animation:hscan 6s linear infinite;opacity:.35;pointer-events:none}
+.hero-inner{max-width:700px;position:relative;z-index:2;animation:shimmerIn .7s ease .1s both}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--cy4);border:1px solid var(--border);border-radius:20px;padding:5px 16px;font-size:11px;color:var(--cy);letter-spacing:.12em;margin-bottom:24px;font-weight:600}
+.bdot{width:6px;height:6px;background:var(--cy);border-radius:50%;animation:bpulse 2s infinite;flex-shrink:0}
+.hero h1{font-family:'Rajdhani',sans-serif;font-size:clamp(40px,6.5vw,80px);font-weight:700;line-height:1.03;margin-bottom:10px;letter-spacing:.05em}
+.hero h1 .cyan{color:var(--cy)}
+.hero-subtitle{font-family:'Rajdhani',sans-serif;font-size:clamp(15px,2.2vw,22px);font-weight:500;color:var(--txt2);letter-spacing:.07em;margin-bottom:18px}
+.hero p{font-size:15px;color:var(--txt2);line-height:1.75;max-width:560px;font-weight:300;margin-bottom:36px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.stats-row{display:flex;gap:36px;flex-wrap:wrap;margin-top:44px;padding-top:36px;border-top:1px solid var(--border)}
+.stat-n{font-family:'Rajdhani',sans-serif;font-size:30px;font-weight:700;color:var(--cy);line-height:1}
+.stat-l{font-size:10px;color:var(--txt3);letter-spacing:.1em;margin-top:3px;font-weight:600}
+.hero-visual{position:absolute;inset-inline-end:40px;top:50%;transform:translateY(-50%);width:36%;max-width:360px;pointer-events:none;z-index:1}
+.hv-panel{border:1px solid var(--border);border-radius:18px;background:linear-gradient(135deg,rgba(0,229,255,.05),rgba(0,40,80,.1));position:relative;overflow:hidden;aspect-ratio:1/1.1;animation:floatY 6s ease-in-out infinite}
+.hv-corner{position:absolute;width:22px;height:22px;border-color:var(--cy);border-style:solid;opacity:.7}
+.hvc-tl{top:16px;left:16px;border-width:2px 0 0 2px;border-radius:3px 0 0 0}
+.hvc-tr{top:16px;right:16px;border-width:2px 2px 0 0;border-radius:0 3px 0 0}
+.hvc-bl{bottom:16px;left:16px;border-width:0 0 2px 2px;border-radius:0 0 0 3px}
+.hvc-br{bottom:16px;right:16px;border-width:0 2px 2px 0;border-radius:0 0 3px 0}
+.hv-inner{position:absolute;top:15%;left:18%;right:18%;bottom:15%;border:1px solid rgba(0,229,255,.18);border-radius:10px}
+.hv-core{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:40%;height:40%;background:rgba(0,229,255,.07);border:1px solid rgba(0,229,255,.25);border-radius:6px;display:flex;align-items:center;justify-content:center}
+.hv-metrics{position:absolute;bottom:20px;left:16px;right:16px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
+.hvm{background:rgba(0,0,0,.55);border:1px solid var(--border);border-radius:8px;padding:8px;text-align:center}
+.hvm-v{font-family:'Rajdhani',sans-serif;font-size:16px;font-weight:700;color:var(--cy)}
+.hvm-l{font-size:9px;color:var(--txt3);letter-spacing:.07em;margin-top:1px}
+@media(max-width:900px){.hero-visual{display:none}.hero{padding:70px 20px 60px}}
+
+/* Tech strip */
+.tech-strip{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:28px 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:600px){.tech-strip{grid-template-columns:1fr 1fr;padding:24px 20px}}
+.ts-item{text-align:center}
+.ts-n{font-family:'Rajdhani',sans-serif;font-size:30px;font-weight:700;color:var(--cy)}
+.ts-l{font-size:11px;color:var(--txt3);letter-spacing:.09em;margin-top:3px;font-weight:600}
+
+/* Services */
+.services-section{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.svc-card{background:var(--glass);border:1px solid var(--border);border-radius:14px;padding:24px;position:relative;overflow:hidden;transition:all .3s}
+.svc-card::before{content:'';position:absolute;top:0;inset-inline-start:0;inset-inline-end:0;height:2px;background:linear-gradient(to right,var(--cy),transparent);opacity:0;transition:opacity .3s}
+.svc-card:hover{border-color:rgba(0,229,255,.45);transform:translateY(-4px);background:rgba(0,229,255,.04)}
+.svc-card:hover::before{opacity:1}
+.svc-icon{width:44px;height:44px;background:var(--cy3);border:1px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.svc-title{font-family:'Rajdhani',sans-serif;font-size:16px;font-weight:700;margin-bottom:8px;letter-spacing:.02em}
+.svc-desc{font-size:13px;color:var(--txt2);line-height:1.65;font-weight:300}
+.svc-tag{display:inline-block;margin-top:12px;font-size:10px;color:var(--cy);border:1px solid rgba(0,229,255,.3);border-radius:4px;padding:3px 9px;letter-spacing:.09em;font-weight:600}
+
+/* Process cards */
+.process-section{background:var(--bg4);border-bottom:1px solid var(--border)}
+.process-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.proc-card{background:var(--glass);border:1px solid var(--border);border-radius:14px;padding:22px;position:relative;overflow:hidden}
+.proc-card::after{content:'';position:absolute;top:0;inset-inline-start:0;inset-inline-end:0;height:2px;background:linear-gradient(to right,var(--cy),transparent)}
+.proc-num{font-size:11px;color:var(--cy);letter-spacing:.12em;margin-bottom:14px;font-weight:700}
+.proc-icon{width:40px;height:40px;background:rgba(0,229,255,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.proc-title{font-family:'Rajdhani',sans-serif;font-size:15px;font-weight:700;margin-bottom:8px}
+.proc-desc{font-size:12px;color:var(--txt2);line-height:1.6;font-weight:300}
+.proc-stat{margin-top:12px;font-family:'Rajdhani',sans-serif;font-size:22px;font-weight:700;color:var(--cy)}
+.proc-stat-l{font-size:10px;color:var(--txt3);font-weight:600;letter-spacing:.07em}
+.prog-bar{height:3px;background:rgba(0,229,255,.12);border-radius:2px;margin-top:8px;overflow:hidden}
+.prog-fill{height:100%;background:var(--cy);border-radius:2px}
+
+/* ══════════════════════════════
+   ORDER PAGE
+══════════════════════════════ */
+.config-section{background:var(--bg);border-bottom:1px solid var(--border)}
+.config-wrap{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+@media(max-width:900px){.config-wrap{grid-template-columns:1fr}}
+.cpanel{background:var(--glass);border:1px solid var(--border);border-radius:18px;padding:28px;animation:bglow 4s ease-in-out infinite}
+.cpanel-title{display:flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.12em;color:var(--cy);font-weight:700;margin-bottom:22px}
+.cpanel-dot{width:7px;height:7px;background:var(--cy);border-radius:50%;animation:bpulse 2s infinite;flex-shrink:0}
+.field{margin-bottom:20px}
+.field-lbl{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:12px;color:var(--txt2);letter-spacing:.07em;margin-bottom:8px;font-weight:500}
+.field-val{color:var(--cy);font-weight:700;font-family:'Rajdhani',sans-serif;font-size:14px;flex-shrink:0}
+.gi{width:100%;background:rgba(0,229,255,.05);border:1px solid var(--border);border-radius:8px;color:var(--txt);font-size:14px;padding-block:10px;padding-inline:13px;outline:none;transition:border-color .2s,background .2s;font-family:var(--font-en);appearance:none;-webkit-appearance:none}
+.gi:focus{border-color:var(--cy);background:rgba(0,229,255,.09)}
+.gi::placeholder{color:var(--txt3)}
+.gi option{background:#0A1E30;color:var(--txt)}
+input[type=range].gr{-webkit-appearance:none;appearance:none;width:100%;height:3px;background:rgba(0,229,255,.2);border-radius:2px;outline:none;cursor:pointer;display:block}
+input[type=range].gr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;background:var(--cy);border-radius:50%;cursor:pointer;transition:transform .15s}
+input[type=range].gr::-webkit-slider-thumb:hover{transform:scale(1.2)}
+
+.glass-selector-wrap{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:480px){.glass-selector-wrap{grid-template-columns:1fr}}
+.gs-card{background:var(--glass);border:2px solid var(--border);border-radius:12px;padding:14px 16px;cursor:pointer;transition:all .2s;position:relative;overflow:hidden;text-align:start}
+.gs-card:hover:not(.sel){border-color:rgba(0,229,255,.5);background:rgba(0,229,255,.04)}
+.gs-card.sel{background:var(--cy3);border-color:var(--cy)}
+.gs-card::before{content:'';position:absolute;top:0;inset-inline-start:0;inset-inline-end:0;height:2px;background:linear-gradient(to right,var(--cy),transparent);opacity:0;transition:opacity .2s}
+.gs-card.sel::before{opacity:1}
+.gs-thick{font-family:'Rajdhani',sans-serif;font-size:22px;font-weight:700;color:var(--cy);line-height:1}
+.gs-name{font-size:12px;font-weight:600;color:var(--txt);margin-top:2px}
+.gs-card.sel .gs-name{color:var(--cy)}
+.gs-desc{font-size:10px;color:var(--txt3);margin-top:3px;font-weight:300;line-height:1.4}
+.gs-swatch{width:14px;height:14px;border-radius:3px;border:1px solid rgba(255,255,255,.15);display:inline-block;vertical-align:middle;margin-inline-end:5px}
+.dim-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.add-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:8px;background:transparent;border:1px solid var(--cy);color:var(--cy);border-radius:10px;padding:13px 20px;font-size:14px;font-weight:700;cursor:pointer;letter-spacing:.07em;transition:all .2s;font-family:var(--font-en);white-space:nowrap;line-height:1;margin-top:4px}
+.add-btn:hover{background:var(--cy3);transform:translateY(-1px);box-shadow:0 4px 18px rgba(0,229,255,.2)}
+.add-btn svg{flex-shrink:0;display:block}
+.preview-panel{background:var(--glass);border:1px solid var(--border);border-radius:18px;padding:28px}
+.glass-stage{width:100%;aspect-ratio:4/3;background:var(--bg3);border:1px solid var(--border);border-radius:12px;position:relative;overflow:hidden;margin-bottom:20px;display:flex;align-items:center;justify-content:center}
+.gs-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.04) 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
+.glass-pane{border:2px solid rgba(0,229,255,.5);border-radius:3px;position:relative;transition:all .4s cubic-bezier(.34,1.56,.64,1);display:flex;align-items:center;justify-content:center;min-width:40px;min-height:40px}
+.gp-scan{position:absolute;top:0;left:0;right:0;height:2px;background:var(--cy);opacity:.7;animation:gpscan 2.2s ease-in-out infinite;pointer-events:none}
+.gpc{position:absolute;width:11px;height:11px;border-color:var(--cy);border-style:solid;opacity:.9}
+.gpc-tl{top:4px;left:4px;border-width:1.5px 0 0 1.5px}
+.gpc-tr{top:4px;right:4px;border-width:1.5px 1.5px 0 0}
+.gpc-bl{bottom:4px;left:4px;border-width:0 0 1.5px 1.5px}
+.gpc-br{bottom:4px;right:4px;border-width:0 1.5px 1.5px 0}
+.gp-shine{position:absolute;top:0;left:0;width:35%;height:100%;background:linear-gradient(110deg,transparent 35%,rgba(0,229,255,.07) 50%,transparent 65%);pointer-events:none}
+.gp-label{font-size:10px;color:rgba(0,229,255,.6);letter-spacing:.08em;font-weight:600;text-align:center;padding:4px 8px}
+.gp-cross-h{position:absolute;top:50%;left:8%;right:8%;height:1px;background:rgba(0,229,255,.15);pointer-events:none}
+.gp-cross-v{position:absolute;left:50%;top:8%;bottom:8%;width:1px;background:rgba(0,229,255,.15);pointer-events:none}
+.spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px}
+.spec-card{background:rgba(0,0,0,.35);border:1px solid rgba(0,229,255,.1);border-radius:8px;padding:10px 12px}
+.spec-label{font-size:10px;color:var(--txt3);letter-spacing:.09em;margin-bottom:3px;font-weight:700}
+.spec-value{font-family:'Rajdhani',sans-serif;font-size:15px;font-weight:700;color:var(--cy)}
+.spec-unit{font-size:10px;color:var(--txt2);font-weight:400;font-family:var(--font-en)}
+
+/* Order list */
+.order-section{background:var(--bg2);border-bottom:1px solid var(--border)}
+.order-empty{text-align:center;padding:48px 20px;background:var(--glass);border:1px dashed var(--border);border-radius:18px;color:var(--txt3);font-size:14px}
+.order-empty svg{opacity:.3;margin-bottom:12px;display:block;margin-inline:auto}
+.order-table-wrap{background:var(--glass);border:1px solid var(--border);border-radius:18px;overflow:hidden;animation:bglow 5s ease-in-out infinite}
+.order-table{width:100%;border-collapse:collapse}
+.order-table thead tr{background:rgba(0,229,255,.07);border-bottom:1px solid var(--border)}
+.order-table th{font-size:11px;letter-spacing:.1em;color:var(--cy);font-weight:700;padding:14px 18px;text-align:start;white-space:nowrap}
+.order-table tbody tr{border-bottom:1px solid rgba(0,229,255,.07);transition:background .15s;animation:rowIn .3s ease both}
+.order-table tbody tr:last-child{border-bottom:none}
+.order-table tbody tr:hover{background:rgba(0,229,255,.04)}
+.order-table td{font-size:13px;color:var(--txt);padding:13px 18px;vertical-align:middle}
+.order-table td:first-child{font-weight:600}
+.td-glass{display:flex;align-items:center;gap:8px}
+.td-swatch{width:12px;height:12px;border-radius:3px;border:1px solid rgba(255,255,255,.15);flex-shrink:0}
+.td-dim{font-family:'Rajdhani',sans-serif;font-size:15px;color:var(--cy)}
+.td-del{background:transparent;border:1px solid rgba(255,80,80,.3);border-radius:6px;color:rgba(255,100,100,.8);padding:5px 10px;cursor:pointer;font-size:12px;font-family:var(--font-en);transition:all .2s;white-space:nowrap}
+.td-del:hover{background:rgba(255,80,80,.12);border-color:rgba(255,80,80,.6);color:#ff6666}
+.order-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;padding:18px 22px;background:rgba(0,229,255,.04);border-top:1px solid var(--border)}
+.order-total-label{font-size:12px;color:var(--txt2);letter-spacing:.08em;font-weight:600}
+.order-total-val{font-family:'Rajdhani',sans-serif;font-size:22px;color:var(--cy);font-weight:700}
+.order-actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn-wa-bulk{display:flex;align-items:center;gap:8px;background:#128C7E;border:none;border-radius:10px;padding:12px 22px;color:#fff;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;letter-spacing:.05em;font-family:var(--font-en);animation:waPulse 2.5s infinite;white-space:nowrap;line-height:1}
+.btn-wa-bulk:hover{background:#075E54;transform:scale(1.03);animation:none}
+.btn-print{display:flex;align-items:center;gap:8px;background:transparent;border:1px solid var(--border);color:var(--txt2);border-radius:10px;padding:12px 22px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;letter-spacing:.05em;font-family:var(--font-en);white-space:nowrap;line-height:1}
+.btn-print:hover{border-color:var(--cy);color:var(--cy);background:var(--cy4)}
+.btn-clear{background:transparent;border:1px solid rgba(255,80,80,.25);color:rgba(255,100,100,.6);border-radius:10px;padding:12px 18px;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;font-family:var(--font-en);white-space:nowrap;line-height:1}
+.btn-clear:hover{border-color:rgba(255,80,80,.6);color:#ff6666;background:rgba(255,80,80,.07)}
+.qty-ctrl{display:flex;align-items:center;gap:6px}
+.qty-btn{width:26px;height:26px;background:rgba(0,229,255,.08);border:1px solid var(--border);border-radius:5px;color:var(--cy);font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;flex-shrink:0;line-height:1;font-family:'Rajdhani',sans-serif}
+.qty-btn:hover{background:var(--cy3);border-color:var(--cy)}
+.qty-num{font-family:'Rajdhani',sans-serif;font-size:17px;font-weight:700;color:var(--txt);min-width:24px;text-align:center}
+
+/* ══════════════════════════════
+   CUTTING PLAN
+══════════════════════════════ */
+.cut-section{background:var(--bg4);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.sheet-selector{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:0}
+.sheet-pill{background:var(--glass);border:1px solid var(--border);border-radius:8px;padding:8px 15px;cursor:pointer;transition:all .2s;font-size:12px;font-weight:600;color:var(--txt2);letter-spacing:.05em;white-space:nowrap;font-family:var(--font-en)}
+.sheet-pill:hover:not(.sel){border-color:rgba(0,229,255,.5);color:var(--txt)}
+.sheet-pill.sel{background:var(--cy3);border-color:var(--cy);color:var(--cy)}
+.custom-sheet-row{display:flex;align-items:flex-end;gap:10px;flex-wrap:wrap;margin-top:12px;padding-top:12px;border-top:1px solid rgba(0,229,255,.08)}
+.custom-sheet-row label{font-size:11px;color:var(--txt2);letter-spacing:.08em;font-weight:600;display:block;margin-bottom:5px}
+.custom-sheet-row input{width:120px;background:rgba(0,229,255,.05);border:1px solid var(--border);border-radius:8px;color:var(--txt);font-size:13px;padding:8px 12px;outline:none;transition:border-color .2s;font-family:var(--font-en)}
+.custom-sheet-row input:focus{border-color:var(--cy)}
+.custom-sheet-btn{background:transparent;border:1px solid var(--cy);color:var(--cy);border-radius:8px;padding:8px 16px;font-size:12px;font-weight:700;cursor:pointer;font-family:var(--font-en);transition:all .2s;white-space:nowrap}
+.custom-sheet-btn:hover{background:var(--cy3)}
+.gen-btn{display:flex;align-items:center;gap:9px;background:linear-gradient(135deg,rgba(0,229,255,.18),rgba(0,100,150,.15));border:1px solid var(--cy);color:var(--cy);border-radius:10px;padding:13px 26px;font-size:14px;font-weight:700;cursor:pointer;letter-spacing:.07em;transition:all .2s;font-family:var(--font-en);white-space:nowrap;line-height:1;animation:bglow 3s ease-in-out infinite}
+.gen-btn:hover{background:var(--cy3);transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,229,255,.22)}
+.gen-btn svg{flex-shrink:0}
+.cut-controls{display:flex;flex-wrap:wrap;align-items:flex-end;gap:20px;margin-bottom:36px}
+.cut-field{display:flex;flex-direction:column;gap:8px}
+.cut-field-lbl{font-size:11px;color:var(--txt2);letter-spacing:.1em;font-weight:600}
+.cut-results{display:none;animation:fadeIn .4s ease}
+.cut-results.visible{display:block}
+.cut-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:28px}
+.cut-stat-card{background:var(--glass);border:1px solid var(--border);border-radius:12px;padding:16px 18px;text-align:center}
+.cut-stat-num{font-family:'Rajdhani',sans-serif;font-size:28px;font-weight:700;color:var(--cy);line-height:1}
+.cut-stat-lbl{font-size:10px;color:var(--txt3);letter-spacing:.1em;margin-top:4px;font-weight:700}
+.cut-stat-card.waste .cut-stat-num{color:#FF6B6B}
+.cut-legend{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}
+.cut-legend-item{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--txt2);font-weight:500}
+.cut-legend-dot{width:14px;height:14px;border-radius:3px;flex-shrink:0}
+.cut-sheets-wrap{display:flex;flex-direction:column;gap:28px}
+.cut-sheet-block{background:var(--glass);border:1px solid var(--border);border-radius:16px;padding:24px}
+.cut-sheet-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:16px}
+.cut-sheet-title{font-family:'Rajdhani',sans-serif;font-size:16px;font-weight:700;color:var(--cy)}
+.cut-sheet-meta{font-size:12px;color:var(--txt2)}
+.cut-canvas-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;position:relative}
+canvas.cut-canvas{display:block;border:1px solid rgba(0,229,255,.2);border-radius:8px;max-width:100%;background:#050E1C}
+
+/* WA bar */
+.wa-bar{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:28px 40px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:600px){.wa-bar{padding:24px 20px}}
+.wa-bar-info .title{font-family:'Rajdhani',sans-serif;font-size:18px;font-weight:700;color:var(--txt);margin-bottom:4px}
+.wa-bar-info .sub{font-size:13px;color:var(--txt2)}
+.wa-bar-info .num{color:var(--cy);font-weight:600}
+.wa-btn{display:flex;align-items:center;gap:10px;background:#128C7E;border:none;border-radius:50px;padding:13px 24px;color:#fff;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;letter-spacing:.05em;font-family:var(--font-en);animation:waPulse 2.5s infinite;white-space:nowrap;line-height:1}
+.wa-btn svg{flex-shrink:0;display:block}
+.wa-btn:hover{background:#075E54;transform:scale(1.04);animation:none}
+
+/* ══════════════════════════════
+   AGENT PAGE — UPGRADED
+══════════════════════════════ */
+.agent-page{padding:60px 40px;min-height:80vh;display:flex;flex-direction:column;align-items:center;background:var(--bg);position:relative;overflow:hidden}
+.agent-page::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.02) 1px,transparent 1px);background-size:40px 40px;pointer-events:none}
+@media(max-width:768px){.agent-page{padding:40px 20px}}
+.agent-login-card{width:100%;max-width:480px;background:rgba(7,21,37,.9);border:1px solid var(--border);border-radius:24px;padding:44px 40px;position:relative;overflow:hidden;z-index:2}
+.agent-login-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--cy),var(--gold),var(--cy),transparent)}
+.agent-login-card::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(0,229,255,.06) 0%,transparent 60%);pointer-events:none}
+.agent-logo-ring{width:70px;height:70px;border-radius:50%;border:2px solid rgba(0,229,255,.3);background:linear-gradient(135deg,rgba(0,229,255,.1),rgba(255,215,0,.05));display:flex;align-items:center;justify-content:center;margin:0 auto 20px;position:relative}
+.agent-logo-ring::before{content:'';position:absolute;inset:-4px;border-radius:50%;border:1px solid rgba(0,229,255,.12);animation:bglow 3s ease-in-out infinite}
+.agent-title{font-family:'Rajdhani',sans-serif;font-size:26px;font-weight:700;text-align:center;letter-spacing:.06em;margin-bottom:4px;background:linear-gradient(90deg,var(--cy),var(--gold),var(--cy));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:devGlow 3s ease-in-out infinite}
+.agent-sub{font-size:13px;color:var(--txt2);text-align:center;margin-bottom:30px;letter-spacing:.03em}
+.agent-badge2{display:inline-flex;align-items:center;gap:6px;background:rgba(255,180,0,.08);border:1px solid rgba(255,180,0,.25);border-radius:20px;padding:4px 12px;font-size:10px;color:#FFD93D;letter-spacing:.08em;margin-bottom:20px;font-weight:600;width:100%;justify-content:center}
+.agent-field{margin-bottom:18px}
+.agent-field label{font-size:11px;color:var(--txt2);letter-spacing:.1em;font-weight:600;display:block;margin-bottom:8px}
+.agent-input{width:100%;background:rgba(0,229,255,.04);border:1px solid rgba(0,229,255,.2);border-radius:10px;color:var(--txt);font-size:14px;padding:13px 16px;outline:none;transition:all .2s;font-family:var(--font-en)}
+.agent-input:focus{border-color:var(--cy);background:rgba(0,229,255,.08);box-shadow:0 0 0 3px rgba(0,229,255,.06)}
+.agent-input::placeholder{color:var(--txt3)}
+.agent-login-btn{width:100%;background:linear-gradient(135deg,var(--cy),var(--cy2));color:#020A14;border:none;border-radius:10px;padding:15px;font-size:14px;font-weight:700;cursor:pointer;letter-spacing:.08em;transition:all .2s;font-family:var(--font-en);margin-top:8px;position:relative;overflow:hidden}
+.agent-login-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,229,255,.35)}
+.agent-login-btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);transition:left .4s}
+.agent-login-btn:hover::before{left:100%}
+.agent-divider{border:none;border-top:1px solid rgba(0,229,255,.1);margin:20px 0}
+.agent-links{display:flex;justify-content:space-between;font-size:12px;color:var(--txt3)}
+.agent-link{cursor:pointer;transition:color .2s}
+.agent-link:hover{color:var(--cy)}
+.agent-hint{margin-top:16px;text-align:center;font-size:11px;color:var(--txt3);padding:10px;background:rgba(0,229,255,.03);border:1px solid rgba(0,229,255,.08);border-radius:8px}
+
+/* Dashboard */
+.agent-dash-wrap{width:100%;max-width:1000px;animation:fadeIn .4s ease;z-index:2}
+.agent-dash-title{font-family:'Rajdhani',sans-serif;font-size:28px;font-weight:700;color:var(--cy);margin-bottom:5px}
+.agent-dash-sub{font-size:13px;color:var(--txt2);margin-bottom:28px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:28px}
+.kpi{background:var(--glass);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center;position:relative;overflow:hidden}
+.kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--cy),transparent)}
+.kpi-val{font-family:'Rajdhani',sans-serif;font-size:32px;font-weight:700;color:var(--cy);line-height:1}
+.kpi-lbl{font-size:10px;color:var(--txt3);letter-spacing:.1em;margin-top:4px;font-weight:700}
+.agent-table-wrap{background:var(--glass);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:22px}
+.agent-table{width:100%;border-collapse:collapse}
+.agent-table th{background:rgba(0,229,255,.07);color:var(--cy);font-size:11px;letter-spacing:.1em;padding:13px 18px;text-align:start;font-weight:700}
+.agent-table td{padding:12px 18px;font-size:13px;color:var(--txt);border-top:1px solid rgba(0,229,255,.06)}
+.status-pill{display:inline-block;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700;letter-spacing:.07em}
+.status-pill.confirmed{background:rgba(0,229,255,.12);color:var(--cy);border:1px solid var(--border)}
+.status-pill.pending{background:rgba(255,217,0,.1);color:#FFD93D;border:1px solid rgba(255,217,0,.25)}
+.status-pill.delivered{background:rgba(100,255,130,.1);color:#69FF7D;border:1px solid rgba(100,255,130,.25)}
+.agent-logout{background:transparent;border:1px solid rgba(255,80,80,.3);color:rgba(255,100,100,.8);border-radius:8px;padding:8px 20px;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--font-en);transition:all .2s}
+.agent-logout:hover{background:rgba(255,80,80,.1);border-color:rgba(255,80,80,.6);color:#ff6666}
+
+/* ══════════════════════════════
+   ABOUT PAGE
+══════════════════════════════ */
+.about-hero{padding:90px 40px 70px;position:relative;overflow:hidden;border-bottom:1px solid var(--border);background:linear-gradient(160deg,#040E1A 0%,#071525 60%,#030C18 100%)}
+@media(max-width:768px){.about-hero{padding:60px 20px 50px}}
+.about-section{padding:70px 40px;background:var(--bg);border-bottom:1px solid var(--border)}
+@media(max-width:768px){.about-section{padding:50px 20px}}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start;margin-bottom:56px}
+@media(max-width:800px){.about-grid{grid-template-columns:1fr}}
+.about-h3{font-family:'Rajdhani',sans-serif;font-size:26px;font-weight:700;color:var(--cy);margin-bottom:14px;letter-spacing:.04em}
+.about-p{font-size:14px;color:var(--txt2);line-height:1.8;font-weight:300;margin-bottom:12px}
+.color-catalog-box{background:var(--glass);border:1px solid var(--border);border-radius:18px;padding:28px;animation:bglow 5s ease-in-out infinite}
+.color-catalog-box h4{font-family:'Rajdhani',sans-serif;font-size:15px;font-weight:700;color:var(--cy);letter-spacing:.08em;margin-bottom:16px}
+.swatches-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(36px,1fr));gap:5px}
+.swatch-item{width:100%;aspect-ratio:1/1;border-radius:6px;border:1px solid rgba(255,255,255,.1);cursor:pointer;transition:transform .15s,box-shadow .15s;position:relative}
+.swatch-item:hover{transform:scale(1.18);box-shadow:0 0 10px rgba(0,229,255,.4);z-index:2}
+.swatch-tip{position:absolute;bottom:calc(100% + 5px);left:50%;transform:translateX(-50%);background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:3px 7px;font-size:9px;color:var(--cy);white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .15s;z-index:10}
+.swatch-item:hover .swatch-tip{opacity:1}
+
+/* Machinery section */
+.machinery-section{padding:0 40px 70px;background:var(--bg)}
+@media(max-width:768px){.machinery-section{padding:0 20px 50px}}
+.machinery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.mach-card{background:var(--glass);border:1px solid var(--border);border-radius:16px;padding:26px;position:relative;overflow:hidden;transition:all .3s}
+.mach-card:hover{border-color:rgba(0,229,255,.45);transform:translateY(-3px);background:rgba(0,229,255,.04)}
+.mach-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--cy),transparent);opacity:.8}
+.mach-icon-row{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.mach-icon{width:44px;height:44px;background:linear-gradient(135deg,var(--cy3),var(--gold2));border:1px solid rgba(255,215,0,.2);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.mach-brand{font-family:'Rajdhani',sans-serif;font-size:18px;font-weight:700;letter-spacing:.06em;color:var(--gold);line-height:1}
+.mach-type{font-size:11px;color:var(--txt2);letter-spacing:.08em;margin-top:1px}
+.mach-desc{font-size:12px;color:var(--txt2);line-height:1.65;font-weight:300}
+.mach-spec{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px}
+.mach-tag{font-size:10px;color:var(--gold);border:1px solid rgba(255,215,0,.25);border-radius:4px;padding:2px 8px;letter-spacing:.07em;font-weight:600;background:rgba(255,215,0,.05)}
+
+/* CNC features */
+.cnc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:40px}
+.cnc-card{background:var(--glass);border:1px solid var(--border);border-radius:14px;padding:22px;position:relative;overflow:hidden}
+.cnc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--cy),transparent)}
+.cnc-num{font-family:'Rajdhani',sans-serif;font-size:32px;font-weight:700;color:var(--cy);line-height:1}
+.cnc-lbl{font-size:10px;color:var(--txt3);letter-spacing:.1em;margin-top:3px;font-weight:700}
+.cnc-desc{font-size:12px;color:var(--txt2);margin-top:8px;line-height:1.6;font-weight:300}
+
+/* Developer card */
+.dev-card-about{margin-top:60px;padding:36px 40px;background:linear-gradient(135deg,rgba(0,229,255,.06),rgba(255,215,0,.04));border:1px solid rgba(255,215,0,.2);border-radius:20px;display:flex;align-items:center;gap:26px;flex-wrap:wrap;position:relative;overflow:hidden}
+.dev-card-about::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cy),var(--gold),var(--cy));background-size:200%;animation:devGlow 3s infinite}
+.dev-avatar{width:68px;height:68px;border-radius:50%;background:linear-gradient(135deg,rgba(0,229,255,.15),rgba(255,215,0,.1));border:2px solid rgba(255,215,0,.3);display:flex;align-items:center;justify-content:center;font-family:'Rajdhani',sans-serif;font-size:22px;font-weight:700;color:var(--gold);flex-shrink:0;position:relative}
+.dev-avatar::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:1px dashed rgba(0,229,255,.2);animation:floatY 4s ease-in-out infinite}
+.dev-name-big{font-family:'Cinzel',serif;font-size:22px;font-weight:600;letter-spacing:.1em;background:linear-gradient(90deg,var(--cy),var(--gold),var(--cy));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:devGlow 3s ease-in-out infinite}
+.dev-role-big{font-size:12px;color:var(--txt2);letter-spacing:.12em;margin-top:4px;font-family:var(--font-en)}
+.dev-bio{font-size:13px;color:var(--txt2);line-height:1.75;font-weight:300;margin-top:10px;max-width:600px}
+
+/* ══════════════════════════════
+   FLOATING WA
+══════════════════════════════ */
+.wa-float{position:fixed;bottom:28px;inset-inline-end:28px;z-index:200;width:56px;height:56px;background:#25D366;border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;box-shadow:0 4px 20px rgba(37,211,102,.45);animation:waPulse 2s infinite}
+.wa-float:hover{background:#1ebe5d;transform:scale(1.1);animation:none}
+.wa-float-tip{position:absolute;inset-inline-end:66px;background:rgba(7,21,37,.97);border:1px solid var(--border);border-radius:8px;padding:7px 12px;font-size:12px;color:var(--cy);white-space:nowrap;font-weight:600;letter-spacing:.05em;opacity:0;pointer-events:none;transition:opacity .2s}
+.wa-float:hover .wa-float-tip{opacity:1}
+@media(max-width:600px){.wa-float{bottom:20px;inset-inline-end:16px}}
+
+/* ══════════════════════════════
+   FOOTER
+══════════════════════════════ */
+.footer{background:var(--bg4);border-top:1px solid var(--border);padding:40px 40px 32px;text-align:center}
+.footer-logo{font-family:'Rajdhani',sans-serif;font-size:24px;font-weight:700;letter-spacing:.14em;color:var(--cy);margin-bottom:6px}
+.footer-sub{font-size:12px;color:var(--txt3);margin-top:4px;letter-spacing:.07em}
+.footer-copy{font-size:11px;color:var(--txt3);margin-top:10px;opacity:.5}
+.footer-dev{margin-top:22px;padding-top:18px;border-top:1px solid rgba(0,229,255,.1);display:flex;flex-direction:column;align-items:center;gap:4px}
+.footer-dev-label{font-size:9px;letter-spacing:.2em;color:var(--txt3);opacity:.6;font-family:var(--font-en)}
+.footer-dev-name{font-family:'Cinzel',serif;font-size:14px;font-weight:600;letter-spacing:.14em;background:linear-gradient(90deg,var(--cy),var(--gold),var(--cy));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:devGlow 3s ease-in-out infinite}
+.footer-dev-role{font-size:9px;color:var(--txt3);letter-spacing:.16em;opacity:.55;font-family:var(--font-en)}
+@media(max-width:600px){.footer{padding:32px 20px 24px}}
+
+/* ══════════════════════════════
+   TOAST
+══════════════════════════════ */
+.toast{position:fixed;bottom:100px;inset-inline-end:28px;z-index:300;background:var(--cy3);border:1px solid var(--cy);border-radius:10px;padding:12px 20px;font-size:13px;color:var(--cy);font-weight:600;letter-spacing:.05em;opacity:0;transform:translateY(10px);transition:all .3s;pointer-events:none;max-width:280px}
+.toast.show{opacity:1;transform:translateY(0)}
+
+/* ══════════════════════════════
+   PRINT
+══════════════════════════════ */
+@media print{
+  body{background:#fff!important;color:#000!important}
+  .nav,.mobile-tabs,.hero,.tech-strip,.config-section,.services-section,.process-section,.wa-bar,.cut-section,.footer,.wa-float,.toast,.page-view#page-agent,.page-view#page-about,.page-view#page-home{display:none!important}
+  .page-view#page-order{display:block!important}
+  .order-section{padding:0!important;background:transparent!important}
+  .order-section .section-hdr{display:none}
+  .order-actions,.btn-print,.btn-wa-bulk,.btn-clear,.td-del,.qty-ctrl,.cut-section{display:none!important}
+  .order-table-wrap{border:1.5px solid #ccc!important;border-radius:0!important;animation:none!important}
+  .order-table th{background:#f0f4f8!important;color:#003344!important}
+  .order-table td{color:#111!important}
+  .order-table tbody tr{border-bottom:1px solid #ddd!important}
+  .order-footer{background:#f8fafc!important;border-top:1.5px solid #ccc!important}
+  .order-total-label,.order-total-val{color:#003344!important}
+  .print-header{display:block!important}
+  @page{margin:20mm}
+}
+.print-header{display:none;margin-bottom:28px;padding-bottom:16px;border-bottom:2px solid #003344}
+.print-header h1{font-family:'Rajdhani',Arial,sans-serif;font-size:28px;font-weight:700;color:#003344;letter-spacing:.1em}
+.print-header p{font-size:12px;color:#555;margin-top:4px}
+.ph-row{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:8px}
+.print-date{font-size:11px;color:#777}
+</style>
+</head>
+<body>
+
+<div class="toast" id="toast"></div>
+
+<!-- FLOATING WA -->
+<button class="wa-float" onclick="openWADirect()" title="WhatsApp">
+  <span class="wa-float-tip" id="wa-float-tip">Chat on WhatsApp</span>
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</button>
+
+<div id="app">
+
+<!-- ═════════════ NAV ═════════════ -->
+<nav class="nav">
+  <div class="logo" onclick="switchPage('home')">
+    <div class="logo-icon">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <rect x="1" y="1" width="18" height="18" rx="3" stroke="#00E5FF" stroke-width="1.5"/>
+        <rect x="4" y="4" width="12" height="12" rx="2" stroke="#00E5FF" stroke-width="1" opacity="0.5"/>
+        <rect x="7.5" y="7.5" width="5" height="5" rx="1" fill="#00E5FF" opacity="0.85"/>
+      </svg>
+    </div>
+    <div>
+      <div class="logo-text">JAZAN GROUP</div>
+      <span class="logo-sub" id="nav-sub">GLASS &amp; PLASTIC INDUSTRY</span>
+    </div>
+  </div>
+
+  <div class="nav-tabs">
+    <button class="nav-tab active" id="tab-home"  onclick="switchPage('home')">Home</button>
+    <button class="nav-tab"        id="tab-order" onclick="switchPage('order')">Order Online</button>
+    <button class="nav-tab"        id="tab-agent" onclick="switchPage('agent')">Agent Dashboard</button>
+    <button class="nav-tab"        id="tab-about" onclick="switchPage('about')">About Us</button>
+  </div>
+
+  <!-- Nimat Sami signature — prestigious position in nav -->
+  <div class="nav-dev-sig">
+    <span class="nav-dev-label">Lead Developer</span>
+    <span class="nav-dev-name">Nimat Sami</span>
+    <span class="nav-dev-role">Systems Architect</span>
+  </div>
+
+  <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn"        onclick="setLang('ar')">AR</button>
+      <button class="lang-btn"        onclick="setLang('ku')">KU</button>
+    </div>
+    <button class="nav-cta" id="nav-cta" onclick="switchPage('order')">GET QUOTE</button>
+  </div>
+</nav>
+
+<!-- Mobile tab bar -->
+<div class="mobile-tabs">
+  <div class="mobile-tabs-inner">
+    <button class="mobile-tab active" id="mtab-home"  onclick="switchPage('home')">Home</button>
+    <button class="mobile-tab"        id="mtab-order" onclick="switchPage('order')">Order Online</button>
+    <button class="mobile-tab"        id="mtab-agent" onclick="switchPage('agent')">Agent Dashboard</button>
+    <button class="mobile-tab"        id="mtab-about" onclick="switchPage('about')">About Us</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     HOME PAGE
+═══════════════════════════════════ -->
+<div class="page-view active" id="page-home">
+  <section class="hero" id="home">
+    <div class="hero-grid"></div>
+    <div class="hero-vignette"></div>
+    <div class="hero-scan"></div>
+    <div class="hero-inner">
+      <div class="hero-badge"><div class="bdot"></div><span id="hero-badge-txt">GLASS &amp; PLASTIC INDUSTRY LEADERS</span></div>
+      <h1 id="hero-h1">JAZAN<br><span class="cyan">GROUP</span></h1>
+      <div class="hero-subtitle" id="hero-subtitle">Leaders in Glass &amp; Plastic Industry</div>
+      <p id="hero-p">Precision CNC glass fabrication, 48-color catalog, and computer-driven production — serving architectural, commercial, and industrial clients since 2006.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" id="hero-btn1" onclick="switchPage('order')">Order Online</button>
+        <button class="btn-outline"  id="hero-btn2" onclick="switchPage('about')">About Us</button>
+      </div>
+      <div class="stats-row">
+        <div class="stat"><div class="stat-n">±0.1</div><div class="stat-l" id="stat1">MM TOLERANCE</div></div>
+        <div class="stat"><div class="stat-n">18+</div> <div class="stat-l" id="stat2">YEARS EXPERTISE</div></div>
+        <div class="stat"><div class="stat-n">48</div>  <div class="stat-l" id="stat3">GLASS COLORS</div></div>
+        <div class="stat"><div class="stat-n">ISO</div> <div class="stat-l" id="stat4">CERTIFIED</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hv-panel">
+        <div class="hv-corner hvc-tl"></div><div class="hv-corner hvc-tr"></div>
+        <div class="hv-corner hvc-bl"></div><div class="hv-corner hvc-br"></div>
+        <div class="hv-inner"></div>
+        <div class="hv-core">
+          <svg width="22" height="22" viewBox="0 0 20 20" fill="none"><rect x="1" y="1" width="18" height="18" rx="3" stroke="#00E5FF" stroke-width="1.5"/><rect x="4" y="4" width="12" height="12" rx="2" stroke="#00E5FF" stroke-width="1" opacity="0.5"/><rect x="7.5" y="7.5" width="5" height="5" rx="1" fill="#00E5FF" opacity="0.85"/></svg>
+        </div>
+        <div class="hv-metrics">
+          <div class="hvm"><div class="hvm-v">±0.1</div><div class="hvm-l">MM PREC.</div></div>
+          <div class="hvm"><div class="hvm-v">6000</div><div class="hvm-l">M²/DAY</div></div>
+          <div class="hvm"><div class="hvm-v">ISO</div><div class="hvm-l">CERT.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="tech-strip">
+    <div class="ts-item"><div class="ts-n">2400+</div><div class="ts-l" id="ts1">PROJECTS</div></div>
+    <div class="ts-item"><div class="ts-n">6000</div> <div class="ts-l" id="ts2">M² DAILY</div></div>
+    <div class="ts-item"><div class="ts-n">5-Axis</div><div class="ts-l" id="ts3">CNC CUTTING</div></div>
+    <div class="ts-item"><div class="ts-n">AI</div>    <div class="ts-l" id="ts4">QC SYSTEM</div></div>
+  </div>
+
+  <section class="services-section">
+    <div class="section-hdr">
+      <div class="section-lbl" id="svc-lbl">OUR SOLUTIONS</div>
+      <h2 class="section-title" id="svc-title">Glass for Every Application</h2>
+      <p class="section-sub" id="svc-sub">Precision-engineered glass products for architectural, interior, and industrial use.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card"><div class="svc-icon"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#00E5FF" stroke-width="1.5"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="2" y1="9" x2="22" y2="9"/><line x1="2" y1="15" x2="22" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg></div><div class="svc-title" id="s1t">Curtain Wall Systems</div><div class="svc-desc" id="s1d">Structural glazing for commercial high-rises and building facades. Custom IGU double-glazing to exact specification.</div><div class="svc-tag">ARCHITECTURAL</div></div>
+      <div class="svc-card"><div class="svc-icon"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#00E5FF" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="svc-title" id="s2t">Safety &amp; Security Glass</div><div class="svc-desc" id="s2d">Laminated and toughened glass for banks, clean rooms, and industrial facilities. Blast and bullet resistant options.</div><div class="svc-tag">INDUSTRIAL</div></div>
+      <div class="svc-card"><div class="svc-icon"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#00E5FF" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div><div class="svc-title" id="s3t">Smart PDLC Glass</div><div class="svc-desc" id="s3d">IoT-connected switchable privacy glass for offices, hospitals, and luxury interiors.</div><div class="svc-tag">SMART GLASS</div></div>
+      <div class="svc-card"><div class="svc-icon"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#00E5FF" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg></div><div class="svc-title" id="s4t">Solar-Control Glazing</div><div class="svc-desc" id="s4d">High-performance low-E and reflective coatings for heat management and UV protection.</div><div class="svc-tag">ENERGY-SAVING</div></div>
+      <div class="svc-card"><div class="svc-icon"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#00E5FF" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg></div><div class="svc-title" id="s5t">CNC Cut-to-Size</div><div class="svc-desc" id="s5d">5-axis CNC cutting for any geometry. DXF file intake with digital nesting software for maximum yield.</div><div class="svc-tag">CNC / DIGITAL</div></div>
+      <div class="svc-card"><div class="svc-icon"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#00E5FF" stroke-width="1.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div><div class="svc-title" id="s6t">Acoustic Glass</div><div class="svc-desc" id="s6d">Specialist laminated composites for airports, hotels, and urban buildings. Up to 52dB Rw rating.</div><div class="svc-tag">ACOUSTIC</div></div>
+    </div>
+  </section>
+
+  <section class="process-section">
+    <div class="section-hdr">
+      <div class="section-lbl" id="proc-lbl">DIGITAL MANUFACTURING</div>
+      <h2 class="section-title" id="proc-title">Technology-Driven Production</h2>
+      <p class="section-sub" id="proc-sub">Every panel passes through our integrated digital pipeline — from DXF intake to automated optical inspection.</p>
+    </div>
+    <div class="process-grid">
+      <div class="proc-card"><div class="proc-num">01 / INTAKE</div><div class="proc-icon"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#00E5FF" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div class="proc-title" id="pt1">DXF Digital Intake</div><div class="proc-desc" id="pd1">CAD files parsed and validated. Nesting algorithm maximises yield.</div><div class="proc-stat">98.2%<div class="proc-stat-l">MATERIAL YIELD</div></div><div class="prog-bar"><div class="prog-fill" style="width:98%"></div></div></div>
+      <div class="proc-card"><div class="proc-num">02 / CUTTING</div><div class="proc-icon"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#00E5FF" stroke-width="1.5"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/></svg></div><div class="proc-title" id="pt2">CNC Precision Cutting</div><div class="proc-desc" id="pd2">5-axis CNC achieves sub-0.1mm tolerances on any geometry.</div><div class="proc-stat">±0.1mm<div class="proc-stat-l">TOLERANCE</div></div><div class="prog-bar"><div class="prog-fill" style="width:100%"></div></div></div>
+      <div class="proc-card"><div class="proc-num">03 / TREATMENT</div><div class="proc-icon"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#00E5FF" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div><div class="proc-title" id="pt3">Automated Tempering</div><div class="proc-desc" id="pd3">Closed-loop furnaces. Process logs archived per panel ID.</div><div class="proc-stat">690°C<div class="proc-stat-l">PEAK TEMP</div></div><div class="prog-bar"><div class="prog-fill" style="width:92%"></div></div></div>
+      <div class="proc-card"><div class="proc-num">04 / QC</div><div class="proc-icon"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#00E5FF" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div><div class="proc-title" id="pt4">AI Optical Inspection</div><div class="proc-desc" id="pd4">Machine-vision scans 100% of production at 50µm resolution.</div><div class="proc-stat">50µm<div class="proc-stat-l">RESOLUTION</div></div><div class="prog-bar"><div class="prog-fill" style="width:95%"></div></div></div>
+      <div class="proc-card"><div class="proc-num">05 / TRACING</div><div class="proc-icon"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#00E5FF" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div><div class="proc-title" id="pt5">Digital Traceability</div><div class="proc-desc" id="pd5">QR-linked digital passport per panel covering full process data.</div><div class="proc-stat">100%<div class="proc-stat-l">TRACEABLE</div></div><div class="prog-bar"><div class="prog-fill" style="width:100%"></div></div></div>
+      <div class="proc-card"><div class="proc-num">06 / DELIVERY</div><div class="proc-icon"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#00E5FF" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><div class="proc-title" id="pt6">Smart Logistics</div><div class="proc-desc" id="pd6">GPS-tracked vehicles with climate-controlled compartments.</div><div class="proc-stat">99.1%<div class="proc-stat-l">ON-TIME RATE</div></div><div class="prog-bar"><div class="prog-fill" style="width:99%"></div></div></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-logo">JAZAN GROUP</div>
+    <div class="footer-sub">Precision Glass Manufacturing · Computer-Driven Production · ISO Certified</div>
+    <div class="footer-copy">© 2025 Jazan Group. All rights reserved.</div>
+    <div class="footer-dev">
+      <span class="footer-dev-label">PLATFORM DEVELOPED BY</span>
+      <span class="footer-dev-name">Nimat Sami</span>
+      <span class="footer-dev-role">LEAD DEVELOPER &amp; SYSTEMS ARCHITECT</span>
+    </div>
+  </footer>
+</div><!-- /page-home -->
+
+<!-- ═══════════════════════════════════
+     ORDER ONLINE PAGE
+═══════════════════════════════════ -->
+<div class="page-view" id="page-order">
+
+  <div class="tech-strip">
+    <div class="ts-item"><div class="ts-n">2400+</div><div class="ts-l">PROJECTS</div></div>
+    <div class="ts-item"><div class="ts-n">6000</div> <div class="ts-l">M² DAILY</div></div>
+    <div class="ts-item"><div class="ts-n">5-Axis</div><div class="ts-l">CNC CUTTING</div></div>
+    <div class="ts-item"><div class="ts-n">AI</div>    <div class="ts-l">QC SYSTEM</div></div>
+  </div>
+
+  <section class="config-section" id="configurator">
+    <div class="section-hdr">
+      <div class="section-lbl" id="cfg-lbl">DIGITAL CONFIGURATOR</div>
+      <h2 class="section-title" id="cfg-title">Configure Your Glass</h2>
+      <p  class="section-sub"  id="cfg-sub">Select glass type &amp; thickness, enter dimensions, and add items to your order list.</p>
+    </div>
+    <div class="config-wrap">
+      <div class="cpanel">
+        <div class="cpanel-title"><div class="cpanel-dot"></div><span id="cp1-title">GLASS TYPE &amp; THICKNESS</span></div>
+        <div class="field">
+          <div class="field-lbl" style="margin-bottom:12px"><span id="lbl-glass-sel">SELECT GLASS</span></div>
+          <div class="glass-selector-wrap" id="glassSelectorWrap"></div>
+        </div>
+        <div class="field">
+          <div class="field-lbl"><span id="lbl-dims">DIMENSIONS</span></div>
+          <div class="dim-row">
+            <div>
+              <div class="field-lbl" style="margin-bottom:6px"><span id="lbl-w">WIDTH (cm)</span><span class="field-val" id="wv">120</span></div>
+              <input type="range" class="gr" min="10" max="500" value="120" id="wRange" oninput="syncR('wRange','wv','wIn');upd()">
+              <input type="number" class="gi" id="wIn" value="120" min="10" max="500" oninput="syncI('wIn','wv','wRange');upd()" style="margin-top:8px">
+            </div>
+            <div>
+              <div class="field-lbl" style="margin-bottom:6px"><span id="lbl-h">HEIGHT (cm)</span><span class="field-val" id="hv">240</span></div>
+              <input type="range" class="gr" min="10" max="600" value="240" id="hRange" oninput="syncR('hRange','hv','hIn');upd()">
+              <input type="number" class="gi" id="hIn" value="240" min="10" max="600" oninput="syncI('hIn','hv','hRange');upd()" style="margin-top:8px">
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <div class="field-lbl" style="margin-bottom:8px"><span id="lbl-qty">QUANTITY</span></div>
+          <input type="number" class="gi" id="qtyIn" value="1" min="1" max="9999" oninput="upd()">
+        </div>
+        <button class="add-btn" onclick="addItem()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          <span id="add-btn-txt">Add to Order</span>
+        </button>
+      </div>
+      <div class="preview-panel">
+        <div class="cpanel-title"><div class="cpanel-dot"></div><span id="cp2-title">LIVE PREVIEW</span></div>
+        <div class="glass-stage" id="stage">
+          <div class="gs-grid"></div>
+          <div class="glass-pane" id="gpane">
+            <div class="gp-scan"></div>
+            <div class="gpc gpc-tl"></div><div class="gpc gpc-tr"></div>
+            <div class="gpc gpc-bl"></div><div class="gpc gpc-br"></div>
+            <div class="gp-shine"></div>
+            <div class="gp-cross-h"></div><div class="gp-cross-v"></div>
+            <div class="gp-label" id="gpLabel">120 × 240 cm</div>
+          </div>
+        </div>
+        <div class="spec-grid">
+          <div class="spec-card"><div class="spec-label" id="sl1">AREA</div>      <div class="spec-value" id="sv1">2.88 <span class="spec-unit">m²</span></div></div>
+          <div class="spec-card"><div class="spec-label" id="sl2">WEIGHT</div>    <div class="spec-value" id="sv2">72.0 <span class="spec-unit">kg</span></div></div>
+          <div class="spec-card"><div class="spec-label" id="sl3">GLASS</div>     <div class="spec-value" id="sv3" style="font-size:12px">10mm Clear</div></div>
+          <div class="spec-card"><div class="spec-label" id="sl4">THICKNESS</div> <div class="spec-value" id="sv4">10 <span class="spec-unit">mm</span></div></div>
+          <div class="spec-card"><div class="spec-label" id="sl5">QUANTITY</div>  <div class="spec-value" id="sv5">1 <span class="spec-unit">pcs</span></div></div>
+          <div class="spec-card"><div class="spec-label" id="sl6">TOTAL AREA</div><div class="spec-value" id="sv6">2.88 <span class="spec-unit">m²</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="order-section" id="orderSection">
+    <div class="section-hdr">
+      <div class="section-lbl" id="ord-lbl">ORDER LIST</div>
+      <h2 class="section-title" id="ord-title">Your Glass Order</h2>
+      <p  class="section-sub"  id="ord-sub">Review all items, adjust quantities, then send via WhatsApp or print.</p>
+    </div>
+    <div class="print-header">
+      <div class="ph-row">
+        <div><h1>JAZAN GROUP</h1><p>Precision Glass Manufacturing — Order Sheet</p></div>
+        <div class="print-date" id="printDate"></div>
+      </div>
+    </div>
+    <div id="orderContainer"></div>
+  </section>
+
+  <!-- CUTTING PLAN -->
+  <section class="cut-section" id="cuttingPlan">
+    <div class="section-hdr">
+      <div class="section-lbl" id="cut-lbl">CUTTING PLAN OPTIMIZER</div>
+      <h2 class="section-title" id="cut-title">Generate Cutting Map</h2>
+      <p  class="section-sub"  id="cut-sub">Select a raw sheet size and generate an optimized 2D layout with exact waste calculations.</p>
+    </div>
+    <div class="cut-controls">
+      <div class="cut-field" style="flex:1;min-width:280px">
+        <div class="cut-field-lbl" id="cut-sheet-lbl">RAW SHEET SIZE</div>
+        <div class="sheet-selector" id="sheetSelector"></div>
+        <!-- Custom sheet size input -->
+        <div class="custom-sheet-row">
+          <div>
+            <label id="cut-custom-lbl">CUSTOM WIDTH (mm)</label>
+            <input type="number" id="customW" placeholder="e.g. 3000" min="100" max="12000">
+          </div>
+          <div>
+            <label id="cut-custom-lbl2">CUSTOM HEIGHT (mm)</label>
+            <input type="number" id="customH" placeholder="e.g. 2000" min="100" max="8000">
+          </div>
+          <button class="custom-sheet-btn" onclick="applyCustomSheet()" id="cut-custom-btn">Apply Custom</button>
+        </div>
+      </div>
+      <button class="gen-btn" onclick="generateCuttingPlan()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h6M3 15h6"/><path d="M15 8l3 4-3 4"/></svg>
+        <span id="cut-gen-btn">Generate Cutting Plan</span>
+      </button>
+    </div>
+    <div class="cut-results" id="cutResults">
+      <div class="cut-stats"      id="cutStats"></div>
+      <div class="cut-legend"     id="cutLegend"></div>
+      <div class="cut-sheets-wrap" id="cutSheetsWrap"></div>
+    </div>
+  </section>
+
+  <div class="wa-bar">
+    <div class="wa-bar-info">
+      <div class="title" id="wa-title">Contact Us on WhatsApp</div>
+      <div class="sub"><span id="wa-note">Direct line for orders and quotes: </span><span class="num">+964 750 183 0009</span></div>
+    </div>
+    <button class="wa-btn" onclick="openWADirect()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span id="wa-btn-txt">WhatsApp Us</span>
+    </button>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-logo">JAZAN GROUP</div>
+    <div class="footer-sub">Precision Glass Manufacturing · Computer-Driven Production · ISO Certified</div>
+    <div class="footer-copy">© 2025 Jazan Group. All rights reserved.</div>
+    <div class="footer-dev">
+      <span class="footer-dev-label">PLATFORM DEVELOPED BY</span>
+      <span class="footer-dev-name">Nimat Sami</span>
+      <span class="footer-dev-role">LEAD DEVELOPER &amp; SYSTEMS ARCHITECT</span>
+    </div>
+  </footer>
+</div><!-- /page-order -->
+
+<!-- ═══════════════════════════════════
+     AGENT DASHBOARD PAGE
+═══════════════════════════════════ -->
+<div class="page-view" id="page-agent">
+<div class="agent-page">
+
+  <div id="agentLoginWrap">
+    <div class="agent-login-card">
+      <div class="agent-logo-ring">
+        <svg width="32" height="32" viewBox="0 0 20 20" fill="none"><rect x="1" y="1" width="18" height="18" rx="3" stroke="#00E5FF" stroke-width="1.5"/><rect x="4" y="4" width="12" height="12" rx="2" stroke="#00E5FF" stroke-width="1" opacity="0.5"/><rect x="7.5" y="7.5" width="5" height="5" rx="1" fill="#FFD700" opacity="0.85"/></svg>
+      </div>
+      <div class="agent-badge2"><div class="bdot" style="background:#FFD93D;margin-inline-end:4px"></div>AGENT PORTAL — RESTRICTED ACCESS</div>
+      <div class="agent-title">JAZAN GROUP</div>
+      <div class="agent-sub">Agent Dashboard — Sign in with your authorized credentials to access sales data, order tracking, and client management.</div>
+      <div class="agent-field">
+        <label id="agent-email-lbl">AGENT ID / EMAIL</label>
+        <input type="email" class="agent-input" id="agentEmail" placeholder="agent@jazangroup.com">
+      </div>
+      <div class="agent-field">
+        <label id="agent-pass-lbl">SECURE PASSWORD</label>
+        <input type="password" class="agent-input" id="agentPass" placeholder="••••••••" onkeydown="if(event.key==='Enter')agentLogin()">
+      </div>
+      <button class="agent-login-btn" onclick="agentLogin()" id="agent-login-btn-txt">ACCESS DASHBOARD</button>
+      <hr class="agent-divider">
+      <div class="agent-links">
+        <span class="agent-link" onclick="showToast('Contact your system administrator.')">Forgot credentials?</span>
+        <span class="agent-link" onclick="showToast('Contact your system administrator.')">Request Access</span>
+      </div>
+      <div class="agent-hint">Demo credentials: agent@jazangroup.com / jazan2025</div>
+    </div>
+  </div>
+
+  <div id="agentDashWrap" style="display:none">
+    <div class="agent-dash-wrap">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px;margin-bottom:28px">
+        <div>
+          <div class="agent-dash-title" id="agentWelcome">Welcome back, Agent</div>
+          <div class="agent-dash-sub">Last login: <span id="loginTime"></span></div>
+        </div>
+        <button class="agent-logout" onclick="agentLogout()" id="agent-logout-btn">Sign Out</button>
+      </div>
+      <div class="kpis">
+        <div class="kpi"><div class="kpi-val">142</div><div class="kpi-lbl">ACTIVE ORDERS</div></div>
+        <div class="kpi"><div class="kpi-val">38</div><div class="kpi-lbl">PENDING QUOTES</div></div>
+        <div class="kpi"><div class="kpi-val" style="color:#69FF7D">94.2%</div><div class="kpi-lbl">ON-TIME DELIVERY</div></div>
+        <div class="kpi"><div class="kpi-val" style="color:#FFD93D">$284K</div><div class="kpi-lbl">MTD REVENUE</div></div>
+      </div>
+      <div style="font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:700;color:var(--cy);letter-spacing:.1em;margin-bottom:12px">RECENT ORDERS</div>
+      <div class="agent-table-wrap">
+        <table class="agent-table">
+          <thead><tr><th>ORDER ID</th><th>CLIENT</th><th>GLASS TYPE</th><th>AREA</th><th>DATE</th><th>STATUS</th></tr></thead>
+          <tbody>
+            <tr><td>#JG-20541</td><td>Al-Rashid Contractors</td><td>10mm Clear Tempered</td><td>142 m²</td><td>2025-07-14</td><td><span class="status-pill confirmed">Confirmed</span></td></tr>
+            <tr><td>#JG-20540</td><td>Horizon Interiors</td><td>6mm Frosted</td><td>28 m²</td><td>2025-07-14</td><td><span class="status-pill delivered">Delivered</span></td></tr>
+            <tr><td>#JG-20537</td><td>Sky Tower LLC</td><td>8mm Tinted Bronze</td><td>310 m²</td><td>2025-07-13</td><td><span class="status-pill pending">Pending</span></td></tr>
+            <tr><td>#JG-20535</td><td>National Projects Co.</td><td>10mm Laminated Safety</td><td>76 m²</td><td>2025-07-12</td><td><span class="status-pill confirmed">Confirmed</span></td></tr>
+            <tr><td>#JG-20531</td><td>Cityscape Developers</td><td>5mm Reflective Silver</td><td>220 m²</td><td>2025-07-11</td><td><span class="status-pill delivered">Delivered</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <button class="btn-primary" onclick="switchPage('order')">+ Create New Order</button>
+        <button class="btn-outline" onclick="showToast('Report export coming soon.')">Export Report</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div><!-- /page-agent -->
+
+<!-- ═══════════════════════════════════
+     ABOUT US PAGE
+═══════════════════════════════════ -->
+<div class="page-view" id="page-about">
+
+  <div class="about-hero">
+    <div class="hero-grid" style="position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.03) 1px,transparent 1px);background-size:52px 52px;pointer-events:none"></div>
+    <div class="hero-scan" style="position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--cy),transparent);animation:hscan 6s linear infinite;opacity:.35;pointer-events:none"></div>
+    <div style="position:relative;z-index:2;max-width:740px;animation:shimmerIn .6s ease both">
+      <div class="hero-badge"><div class="bdot"></div>JAZAN GROUP — EST. 2006</div>
+      <h1 style="font-family:'Rajdhani',sans-serif;font-size:clamp(36px,5.5vw,64px);font-weight:700;line-height:1.08;margin-bottom:12px;letter-spacing:.04em" id="about-h1">
+        Leaders in Glass<br><span style="color:var(--cy)" id="about-h1-span">&amp; Plastic Industry</span>
+      </h1>
+      <p style="font-size:15px;color:var(--txt2);line-height:1.75;max-width:580px;font-weight:300" id="about-p">
+        From architectural curtain walls to precision decorative glass — Jazan Group delivers 48 glass color variants, computer-driven CNC fabrication, and ISO-certified quality to clients across the region.
+      </p>
+    </div>
+  </div>
+
+  <section class="about-section">
+    <div class="about-grid">
+      <div>
+        <div class="about-h3" id="about-cat-h">48-Color Glass Catalog</div>
+        <p class="about-p" id="about-cat-p1">Our signature catalog covers 48 distinct glass colors and finishes — from ultra-clear float and deep bronze tints to vibrant chromatic panels, acid-etched frosted glass, and high-performance solar-reflective coatings.</p>
+        <p class="about-p" id="about-cat-p2">Every color is stocked in standard thicknesses (4mm–19mm) with same-week CNC cut-to-size availability. Custom tints and screen-printed designs are available on order.</p>
+      </div>
+      <div class="color-catalog-box">
+        <h4 id="about-cat-h4">GLASS COLOR CATALOG — 48 VARIANTS</h4>
+        <div class="swatches-grid" id="swatchesGrid"></div>
+      </div>
+    </div>
+
+    <div style="max-width:680px;margin-bottom:40px">
+      <div class="about-h3" id="about-cnc-h">Precision CNC Cutting</div>
+      <p class="about-p" id="about-cnc-p1">Every order processed at Jazan Group passes through our digital fabrication pipeline. Customer drawings are imported as DXF files, nested algorithmically for maximum yield, and executed on 5-axis CNC waterjet and diamond-blade cutting systems.</p>
+      <p class="about-p" id="about-cnc-p2">Our tolerance is ±0.1mm across all thicknesses. Every panel receives a unique QR-linked digital passport documenting the full production record.</p>
+    </div>
+
+    <div class="cnc-grid">
+      <div class="cnc-card"><div class="cnc-num">±0.1mm</div><div class="cnc-lbl">CUT TOLERANCE</div><div class="cnc-desc">Sub-millimetre accuracy across all glass thicknesses using 5-axis CNC systems.</div></div>
+      <div class="cnc-card"><div class="cnc-num">48</div><div class="cnc-lbl">GLASS COLORS</div><div class="cnc-desc">Full spectrum from clear float to specialty chromatic and printed glass.</div></div>
+      <div class="cnc-card"><div class="cnc-num">6000 m²</div><div class="cnc-lbl">DAILY CAPACITY</div><div class="cnc-desc">Industrial-scale output with same-week delivery on cut-to-size orders.</div></div>
+      <div class="cnc-card"><div class="cnc-num">ISO</div><div class="cnc-lbl">CERTIFIED</div><div class="cnc-desc">ISO 9001-aligned quality management from procurement to final QC.</div></div>
+      <div class="cnc-card"><div class="cnc-num">18+</div><div class="cnc-lbl">YEARS EXPERTISE</div><div class="cnc-desc">Serving architectural, commercial, and industrial clients since 2006.</div></div>
+      <div class="cnc-card"><div class="cnc-num">100%</div><div class="cnc-lbl">DIGITAL TRACE</div><div class="cnc-desc">Every panel tracked from raw sheet to delivery with QR documentation.</div></div>
+    </div>
+  </section>
+
+  <!-- MACHINERY SECTION -->
+  <section class="machinery-section">
+    <div class="section-hdr">
+      <div class="section-lbl" id="mach-lbl">INDUSTRIAL MACHINERY</div>
+      <h2 class="section-title" id="mach-title">Our Production Equipment</h2>
+      <p class="section-sub" id="mach-sub">World-class machinery from leading European manufacturers, purpose-built for precision glass fabrication at industrial scale.</p>
+    </div>
+    <div class="machinery-grid">
+      <div class="mach-card">
+        <div class="mach-icon-row">
+          <div class="mach-icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#FFD700" stroke-width="1.5"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/></svg></div>
+          <div><div class="mach-brand">BOTTERO</div><div class="mach-type">Cutting &amp; CNC Line</div></div>
+        </div>
+        <p class="mach-desc">Italian-engineered Bottero automatic cutting line with CNC bridge cutting table. Handles sheets up to 6000×3210mm with ±0.1mm precision across all thicknesses.</p>
+        <div class="mach-spec"><span class="mach-tag">AUTO CUTTING</span><span class="mach-tag">CNC BRIDGE</span><span class="mach-tag">6000×3210mm</span></div>
+      </div>
+      <div class="mach-card">
+        <div class="mach-icon-row">
+          <div class="mach-icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#FFD700" stroke-width="1.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+          <div><div class="mach-brand">BOTTERO</div><div class="mach-type">Laminated Glass Line</div></div>
+        </div>
+        <p class="mach-desc">Dedicated Bottero lamination line for PVB and SGP interlayer processing. Produces safety, acoustic, and structural laminated glass to EN ISO 12543 standard.</p>
+        <div class="mach-spec"><span class="mach-tag">PVB LAMINATION</span><span class="mach-tag">SGP INTERLAYER</span><span class="mach-tag">EN ISO 12543</span></div>
+      </div>
+      <div class="mach-card">
+        <div class="mach-icon-row">
+          <div class="mach-icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#FFD700" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+          <div><div class="mach-brand">TEMPAR</div><div class="mach-type">Tempering Furnace</div></div>
+        </div>
+        <p class="mach-desc">Dual TEMPAR tempering furnaces — Land &amp; North models — with forced convection and closed-loop temperature profiling. Produces EN 12150-1 certified toughened glass up to 690°C.</p>
+        <div class="mach-spec"><span class="mach-tag">LAND MODEL</span><span class="mach-tag">NORTH MODEL</span><span class="mach-tag">EN 12150-1</span><span class="mach-tag">690°C</span></div>
+      </div>
+      <div class="mach-card">
+        <div class="mach-icon-row">
+          <div class="mach-icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#FFD700" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h6M3 15h6"/><path d="M15 8l3 4-3 4"/></svg></div>
+          <div><div class="mach-brand">DEKA</div><div class="mach-type">Processing Centre</div></div>
+        </div>
+        <p class="mach-desc">Multi-model DEKA CNC machining centres including 2500, 2800, and dedicated hole-drilling variants. Handles notching, drilling, polishing, and edge profiling for all glass types.</p>
+        <div class="mach-spec"><span class="mach-tag">DEKA 2500</span><span class="mach-tag">DEKA 2800</span><span class="mach-tag">HOLE DRILLING</span><span class="mach-tag">EDGE PROFILING</span></div>
+      </div>
+      <div class="mach-card">
+        <div class="mach-icon-row">
+          <div class="mach-icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#FFD700" stroke-width="1.5"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="2" y1="9" x2="22" y2="9"/><line x1="2" y1="15" x2="22" y2="15"/></svg></div>
+          <div><div class="mach-brand">IGU / DGU</div><div class="mach-type">Double Glass Line</div></div>
+        </div>
+        <p class="mach-desc">Fully automated Insulating Glass Unit production line for double and triple glazing. Produces argon-filled and warm-edge spacer IGUs for high-performance thermal facades.</p>
+        <div class="mach-spec"><span class="mach-tag">DOUBLE GLAZING</span><span class="mach-tag">TRIPLE GLAZING</span><span class="mach-tag">ARGON FILL</span><span class="mach-tag">WARM-EDGE</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dev card -->
+  <section style="padding:0 40px 70px;background:var(--bg)">
+    <div class="dev-card-about">
+      <div class="dev-avatar">NS</div>
+      <div style="flex:1">
+        <div class="dev-name-big">Nimat Sami</div>
+        <div class="dev-role-big">LEAD DEVELOPER &amp; SYSTEMS ARCHITECT · JAZAN GROUP PLATFORM</div>
+        <div class="dev-bio">Architect of the JAZAN GROUP digital platform — including the multilingual glass configurator, MAXRECTS cutting plan optimizer engine, 48-color catalog, machinery showcase, agent management portal, and the complete RTL/Arabic/Kurdish language system. Built with the same precision standard as Jazan's glass.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-logo">JAZAN GROUP</div>
+    <div class="footer-sub">Precision Glass Manufacturing · Computer-Driven Production · ISO Certified</div>
+    <div class="footer-copy">© 2025 Jazan Group. All rights reserved.</div>
+    <div class="footer-dev">
+      <span class="footer-dev-label">PLATFORM DEVELOPED BY</span>
+      <span class="footer-dev-name">Nimat Sami</span>
+      <span class="footer-dev-role">LEAD DEVELOPER &amp; SYSTEMS ARCHITECT</span>
+    </div>
+  </footer>
+</div><!-- /page-about -->
+
+</div><!-- /app -->
+
+<script>
+'use strict';
+
+/* ─────────────── CONSTANTS ─────────────── */
+const WA_NUM = '9647501830009';
+
+/* ─────────────── PAGE SWITCHER ─────────────── */
+let curPage = 'home';
+function switchPage(page) {
+  document.querySelectorAll('.page-view').forEach(v => v.classList.remove('active'));
+  ['tab-','mtab-'].forEach(pfx => {
+    const el = document.getElementById(pfx + page);
+    document.querySelectorAll('[id^="' + pfx + '"]').forEach(t => t.classList.remove('active'));
+    if(el) el.classList.add('active');
+  });
+  const pv = document.getElementById('page-' + page);
+  if(pv) pv.classList.add('active');
+  curPage = page;
+  window.scrollTo({top:0, behavior:'smooth'});
+  if(page === 'order'){ buildGlassSelector(); buildSheetSelector(); setTimeout(upd, 80); }
+  if(page === 'about'){ buildColorSwatches(); }
+}
+
+/* ─────────────── LANGUAGE / RTL ─────────────── */
+let curLang = 'en';
+
+const TRANSLATIONS = {
+  en:{
+    dir:'ltr', fontCls:'',
+    'nav-sub':'GLASS & PLASTIC INDUSTRY',
+    'hero-badge-txt':'GLASS & PLASTIC INDUSTRY LEADERS',
+    'hero-h1':'JAZAN<br><span class="cyan">GROUP</span>',
+    'hero-subtitle':'Leaders in Glass & Plastic Industry',
+    'hero-p':'Precision CNC glass fabrication, 48-color catalog, and computer-driven production — serving architectural, commercial, and industrial clients since 2006.',
+    'hero-btn1':'Order Online','hero-btn2':'About Us',
+    'stat1':'MM TOLERANCE','stat2':'YEARS EXPERTISE','stat3':'GLASS COLORS','stat4':'CERTIFIED',
+    'ts1':'PROJECTS','ts2':'M² DAILY','ts3':'CNC CUTTING','ts4':'QC SYSTEM',
+    'svc-lbl':'OUR SOLUTIONS','svc-title':'Glass for Every Application','svc-sub':'Precision-engineered glass products for architectural, interior, and industrial use.',
+    's1t':'Curtain Wall Systems','s1d':'Structural glazing for commercial high-rises and building facades.',
+    's2t':'Safety & Security Glass','s2d':'Laminated and toughened glass for banks and industrial facilities.',
+    's3t':'Smart PDLC Glass','s3d':'IoT-connected switchable privacy glass for offices and interiors.',
+    's4t':'Solar-Control Glazing','s4d':'High-performance low-E coatings for heat management and UV protection.',
+    's5t':'CNC Cut-to-Size','s5d':'5-axis CNC cutting for any geometry. DXF file intake with digital nesting.',
+    's6t':'Acoustic Glass','s6d':'Specialist laminated composites. Up to 52dB Rw noise reduction rating.',
+    'proc-lbl':'DIGITAL MANUFACTURING','proc-title':'Technology-Driven Production','proc-sub':'Every panel passes through our integrated digital pipeline.',
+    'pt1':'DXF Digital Intake','pd1':'CAD files parsed. Nesting algorithm maximises yield.',
+    'pt2':'CNC Precision Cutting','pd2':'5-axis CNC achieves sub-0.1mm tolerances.',
+    'pt3':'Automated Tempering','pd3':'Closed-loop furnaces. Logs archived per panel.',
+    'pt4':'AI Optical Inspection','pd4':'Machine-vision scans 100% at 50µm resolution.',
+    'pt5':'Digital Traceability','pd5':'QR-linked passport per panel.',
+    'pt6':'Smart Logistics','pd6':'GPS-tracked vehicles, climate-controlled.',
+    'cfg-lbl':'DIGITAL CONFIGURATOR','cfg-title':'Configure Your Glass','cfg-sub':'Select glass type & thickness, enter dimensions, and add items to your order list.',
+    'cp1-title':'GLASS TYPE & THICKNESS','cp2-title':'LIVE PREVIEW',
+    'lbl-glass-sel':'SELECT GLASS','lbl-dims':'DIMENSIONS','lbl-w':'WIDTH (cm)','lbl-h':'HEIGHT (cm)','lbl-qty':'QUANTITY',
+    'add-btn-txt':'Add to Order',
+    'sl1':'AREA','sl2':'WEIGHT','sl3':'GLASS','sl4':'THICKNESS','sl5':'QUANTITY','sl6':'TOTAL AREA',
+    'ord-lbl':'ORDER LIST','ord-title':'Your Glass Order','ord-sub':'Review items, adjust quantities, then send via WhatsApp or print.',
+    'ord-empty':'No items yet. Configure a glass panel and click "Add to Order".',
+    'th-glass':'Glass Type & Thickness','th-dims':'Dimensions','th-qty':'Qty','th-area':'Total Area',
+    'del-btn':'Remove','total-label':'ORDER TOTAL',
+    'btn-print':'Print Order','btn-wa-bulk':'Send Full Order via WhatsApp','btn-clear':'Clear All',
+    'toast-added':'✓ Item added to order','toast-dim':'Please enter valid dimensions (min 10cm)','toast-empty':'Your order list is empty.',
+    'cut-lbl':'CUTTING PLAN OPTIMIZER','cut-title':'Generate Cutting Map','cut-sub':'Select a raw sheet size and generate an optimized 2D layout with exact waste calculations.',
+    'cut-sheet-lbl':'RAW SHEET SIZE','cut-gen-btn':'Generate Cutting Plan',
+    'cut-custom-lbl':'CUSTOM WIDTH (mm)','cut-custom-lbl2':'CUSTOM HEIGHT (mm)','cut-custom-btn':'Apply Custom',
+    'wa-title':'Contact Us on WhatsApp','wa-note':'Direct line for orders and quotes: ','wa-btn-txt':'WhatsApp Us',
+    'wa-float-tip':'Chat on WhatsApp','nav-cta':'GET QUOTE',
+    'agent-email-lbl':'AGENT ID / EMAIL','agent-pass-lbl':'SECURE PASSWORD','agent-login-btn-txt':'ACCESS DASHBOARD','agent-logout-btn':'Sign Out',
+    'about-h1':'Leaders in Glass<br><span style="color:var(--cy)" id="about-h1-span">& Plastic Industry</span>',
+    'about-p':'From architectural curtain walls to precision decorative glass — Jazan Group delivers 48 glass color variants and ISO-certified quality.',
+    'about-cat-h':'48-Color Glass Catalog','about-cat-p1':'Our catalog covers 48 glass colors and finishes.','about-cat-p2':'Every color stocked in 4mm–19mm with same-week CNC availability.',
+    'about-cat-h4':'GLASS COLOR CATALOG — 48 VARIANTS',
+    'about-cnc-h':'Precision CNC Cutting','about-cnc-p1':'Every order passes through our digital fabrication pipeline.','about-cnc-p2':'Tolerance ±0.1mm. Every panel gets a QR-linked digital passport.',
+    'mach-lbl':'INDUSTRIAL MACHINERY','mach-title':'Our Production Equipment','mach-sub':'World-class machinery from leading European manufacturers.',
+    wa:(w,h,t,tk,qty)=>`Hello JAZAN GROUP 👋\n\nOrder:\n📐 ${w}×${h} cm  🔷 ${t} ${tk}mm  🔢 ${qty} pcs\n\nPlease confirm pricing. Thank you!`,
+    waBH:'Hello JAZAN GROUP 👋\n\nFull order:\n',waFT:'TOTAL',waBF:'Please confirm availability and pricing. Thank you!'
+  },
+
+  ar:{
+    dir:'rtl', fontCls:'rtl-text',
+    'nav-sub':'صناعة الزجاج والبلاستيك',
+    'hero-badge-txt':'رواد صناعة الزجاج والبلاستيك',
+    'hero-h1':'مجموعة<br><span class="cyan">جازان</span>',
+    'hero-subtitle':'رواد في صناعة الزجاج والبلاستيك',
+    'hero-p':'تصنيع زجاج CNC دقيق، كتالوج 48 لوناً، وإنتاج يعتمد على الحاسوب — نخدم عملاء المعمار والتجارة والصناعة منذ 2006.',
+    'hero-btn1':'اطلب الآن','hero-btn2':'عن الشركة',
+    'stat1':'تسامح بالمم','stat2':'سنوات خبرة','stat3':'ألوان زجاج','stat4':'معتمد ISO',
+    'ts1':'مشروع','ts2':'م² يومياً','ts3':'قطع CNC','ts4':'نظام QC',
+    'svc-lbl':'حلولنا','svc-title':'زجاج لكل تطبيق','svc-sub':'منتجات زجاجية مصنعة بدقة للمعمار والتصميم الداخلي والصناعة.',
+    's1t':'أنظمة الجدار الستائري','s1d':'تزجيج هيكلي للأبراج التجارية وواجهات المباني.',
+    's2t':'زجاج السلامة والأمان','s2d':'زجاج مصفح ومقوى للبنوك والمنشآت الصناعية.',
+    's3t':'زجاج ذكي PDLC','s3d':'زجاج خصوصية قابل للتبديل متصل بالإنترنت.',
+    's4t':'تزجيج التحكم الشمسي','s4d':'طلاءات Low-E عالية الأداء لإدارة الحرارة والأشعة الفوق بنفسجية.',
+    's5t':'قطع CNC بالقياس','s5d':'قطع خماسي المحاور لأي شكل. استيراد DXF مع برنامج التعشيش الرقمي.',
+    's6t':'زجاج عازل للصوت','s6d':'مركبات مصفحة متخصصة. خفض الضوضاء حتى 52dB.',
+    'proc-lbl':'التصنيع الرقمي','proc-title':'إنتاج مدفوع بالتكنولوجيا','proc-sub':'كل لوح يمر عبر خط الأنابيب الرقمي المتكامل.',
+    'pt1':'استقبال DXF','pd1':'تحليل ملفات CAD. خوارزمية التعشيش تعظم الاستفادة.',
+    'pt2':'قطع CNC دقيق','pd2':'أنظمة CNC خماسية تحقق تسامحات أقل من 0.1مم.',
+    'pt3':'تقسية آلية','pd3':'أفران مغلقة. سجلات مؤرشفة لكل لوح.',
+    'pt4':'فحص بصري AI','pd4':'رؤية آلية تفحص 100% بدقة 50 ميكرون.',
+    'pt5':'التتبع الرقمي','pd5':'جواز سفر QR لكل لوح.',
+    'pt6':'لوجستيات ذكية','pd6':'مركبات GPS ومقصورات مكيفة.',
+    'cfg-lbl':'المُهيِّئ الرقمي','cfg-title':'اضبط زجاجك','cfg-sub':'اختر النوع والسماكة، أدخل الأبعاد، وأضف للطلب.',
+    'cp1-title':'النوع والسماكة','cp2-title':'معاينة مباشرة',
+    'lbl-glass-sel':'اختر الزجاج','lbl-dims':'الأبعاد','lbl-w':'العرض (سم)','lbl-h':'الارتفاع (سم)','lbl-qty':'الكمية',
+    'add-btn-txt':'أضف للطلب',
+    'sl1':'المساحة','sl2':'الوزن','sl3':'الزجاج','sl4':'السماكة','sl5':'الكمية','sl6':'إجمالي المساحة',
+    'ord-lbl':'قائمة الطلب','ord-title':'طلب الزجاج','ord-sub':'راجع العناصر، عدل الكميات، ثم أرسل عبر واتساب أو اطبع.',
+    'ord-empty':'لا توجد عناصر. اضبط لوحاً واضغط "أضف للطلب".',
+    'th-glass':'النوع والسماكة','th-dims':'الأبعاد','th-qty':'الكمية','th-area':'إجمالي المساحة',
+    'del-btn':'حذف','total-label':'إجمالي الطلب',
+    'btn-print':'طباعة','btn-wa-bulk':'إرسال الطلب الكامل','btn-clear':'مسح الكل',
+    'toast-added':'✓ تمت الإضافة','toast-dim':'أدخل أبعاداً صحيحة (الحد الأدنى 10)','toast-empty':'قائمة الطلب فارغة.',
+    'cut-lbl':'مُحسِّن خطة القطع','cut-title':'إنشاء خريطة القطع','cut-sub':'اختر حجم اللوح وأنشئ تخطيطاً مثالياً مع حسابات الهدر الدقيقة.',
+    'cut-sheet-lbl':'حجم اللوح الخام','cut-gen-btn':'إنشاء خطة القطع',
+    'cut-custom-lbl':'العرض المخصص (مم)','cut-custom-lbl2':'الارتفاع المخصص (مم)','cut-custom-btn':'تطبيق المخصص',
+    'wa-title':'تواصل عبر واتساب','wa-note':'خط مباشر للطلبات: ','wa-btn-txt':'واتساب',
+    'wa-float-tip':'تحدث على واتساب','nav-cta':'احصل على سعر',
+    'agent-email-lbl':'بريد الوكيل','agent-pass-lbl':'كلمة المرور','agent-login-btn-txt':'الوصول للوحة التحكم','agent-logout-btn':'تسجيل الخروج',
+    'about-h1':'رواد في الزجاج<br><span style="color:var(--cy)">والصناعة البلاستيكية</span>',
+    'about-p':'من الجدران الستائرية المعمارية إلى الزجاج الزخرفي الدقيق — توفر مجموعة جازان 48 لوناً من الزجاج وجودة معتمدة ISO.',
+    'about-cat-h':'كتالوج 48 لون','about-cat-p1':'يشمل كتالوجنا 48 لوناً وتشطيباً مختلفاً.','about-cat-p2':'متوفرة بسماكات 4-19مم مع قطع بالقياس خلال أسبوع.',
+    'about-cat-h4':'كتالوج ألوان الزجاج — 48 لوناً',
+    'about-cnc-h':'القطع الدقيق بـ CNC','about-cnc-p1':'كل طلب يمر عبر خط التصنيع الرقمي.','about-cnc-p2':'تسامح ±0.1مم. جواز سفر رقمي لكل لوح.',
+    'mach-lbl':'المعدات الصناعية','mach-title':'معدات الإنتاج','mach-sub':'أجهزة عالمية من كبار المصنعين الأوروبيين.',
+    wa:(w,h,t,tk,qty)=>`مرحباً مجموعة جازان 👋\n\nطلب: ${w}×${h} سم | ${t} ${tk}مم | ${qty} قطعة\nأرجو تأكيد السعر.`,
+    waBH:'مرحباً مجموعة جازان 👋\n\nطلب كامل:\n',waFT:'الإجمالي',waBF:'أرجو تأكيد التوفر والأسعار. شكراً!'
+  },
+
+  ku:{
+    dir:'rtl', fontCls:'rtl-text',
+    'nav-sub':'پیشەسازی شووشە و پلاستیک',
+    'hero-badge-txt':'پێشەنگان لە پیشەسازی شووشە و پلاستیک',
+    'hero-h1':'گروپی<br><span class="cyan">جازان</span>',
+    'hero-subtitle':'پێشەنگان لە پیشەسازی شووشە و پلاستیک',
+    'hero-p':'بەرهەمهێنانی شووشەی CNC تەواو، کتالۆگی 48 ڕەنگ، و بەرهەمهێنانی کۆمپیوتەری — بۆ کڕیارانی تەلارسازی و پیشەسازی لە 2006.',
+    'hero-btn1':'ئەمر بکە','hero-btn2':'دەربارەمان',
+    'stat1':'مم تاقیکردنەوە','stat2':'ساڵ ئەزموون','stat3':'ڕەنگی شووشە','stat4':'ISO تەسدیقکراو',
+    'ts1':'پرۆژە','ts2':'م² ڕۆژانە','ts3':'بڕینی CNC','ts4':'سیستەمی QC',
+    'svc-lbl':'چارەسەرەکانمان','svc-title':'شووشە بۆ هەموو بارودۆخێک','svc-sub':'بەرهەمە شووشەیەکانی تەواو بۆ تەلارسازی، ناوخۆ و پیشەسازی.',
+    's1t':'سیستەمی دیواری پەردە','s1d':'تزجیج هیکلی بۆ بینا بازرگانی.',
+    's2t':'شووشەی سەلامەتی','s2d':'شووشەی لایەریکراو بۆ بانک و کارگەکان.',
+    's3t':'شووشەی زیرەک PDLC','s3d':'شووشەی تایبەتی گۆڕاو بۆ ئۆفیس و نەخۆشخانە.',
+    's4t':'کۆنترۆڵی تیرەی خۆر','s4d':'پێچنراوی Low-E بۆ کوزەیی وزە.',
+    's5t':'بڕینی CNC بەپێی قەبارە','s5d':'بڕینی CNC پێج-ئۆکسی. فایلی DXF داخڵ بکە.',
+    's6t':'شووشەی دەنگبەست','s6d':'تەرکیبی تایبەت تا 52dB کەمکردنەوەی دەنگ.',
+    'proc-lbl':'بەرهەمهێنانی دیجیتاڵ','proc-title':'بەرهەمهێنانی تەکنەلۆجیاییکراو','proc-sub':'هەر پانێڵێک لە هێڵی دیجیتاڵی یەکپارچەمان دەتێپەڕێت.',
+    'pt1':'داخڵکردنی DXF','pd1':'فایلەکانی CAD پارس. ئەلگۆریزمی نێست.',
+    'pt2':'بڕینی CNC تەواو','pd2':'CNC پێج-ئۆکسی تاقیکردنەوەی 0.1مم.',
+    'pt3':'گەرمکردنی ئۆتۆماتیکی','pd3':'ئامێر مغلق. تۆمارەکان بۆ هەر پانێڵێک.',
+    'pt4':'تاقیکردنەوەی AI','pd4':'100% بۆ 50 مایکرۆن.',
+    'pt5':'شوێنکەوتنی دیجیتاڵ','pd5':'پاسپۆرتی QR بۆ هەر پانێڵێک.',
+    'pt6':'لۆجستیکی زیرەک','pd6':'ئوتۆمبێل GPS و گەرمادار.',
+    'cfg-lbl':'ڕێکخستنی دیجیتاڵ','cfg-title':'شووشەکەت ڕێکبخە','cfg-sub':'جۆر و ئەستووری هەڵبژێرە، ڕووکار داخڵ بکە، و زیاد بکە.',
+    'cp1-title':'جۆر و ئەستووری','cp2-title':'پێشبینیی ڕاستەوخۆ',
+    'lbl-glass-sel':'شووشە هەڵبژێرە','lbl-dims':'ڕووکارەکان','lbl-w':'پانی (سم)','lbl-h':'بەرزی (سم)','lbl-qty':'ژمارە',
+    'add-btn-txt':'زیاد بکە',
+    'sl1':'بووەست','sl2':'کێش','sl3':'شووشە','sl4':'ئەستووری','sl5':'ژمارە','sl6':'کۆی بووەست',
+    'ord-lbl':'لیستی ئەمر','ord-title':'ئەمری شووشە','ord-sub':'بپشکنە، ژمارەکان ڕێکبخە، ئەمر بنێرە.',
+    'ord-empty':'هیچ بەندێک نییە. شووشەیەک ڕێکبخە.',
+    'th-glass':'جۆر و ئەستووری','th-dims':'ڕووکارەکان','th-qty':'ژمارە','th-area':'کۆی بووەست',
+    'del-btn':'سڕینەوە','total-label':'کۆی ئەمر',
+    'btn-print':'چاپ','btn-wa-bulk':'ناردنی ئەمری تەواو','btn-clear':'سڕینەوەی هەمووی',
+    'toast-added':'✓ بەند زیاد کرا','toast-dim':'ڕووکارە دروستەکان داخڵ بکە','toast-empty':'لیستی ئەمر بەتاڵە.',
+    'cut-lbl':'ئامرازی ئەندازەبڕین','cut-title':'نەخشەی بڕین دروست بکە','cut-sub':'قەبارەی لەیە هەڵبژێرە و نەخشەی باشترین جێگیرکردن دروست بکە.',
+    'cut-sheet-lbl':'قەبارەی لەیەی خام','cut-gen-btn':'نەخشەی بڕین دروست بکە',
+    'cut-custom-lbl':'پانی دیاریکراو (مم)','cut-custom-lbl2':'بەرزی دیاریکراو (مم)','cut-custom-btn':'جێبەجێکردن',
+    'wa-title':'پەیوەندی لە واتسئاپ','wa-note':'هێڵی ڕاستەوخۆ: ','wa-btn-txt':'واتسئاپ',
+    'wa-float-tip':'واتسئاپ','nav-cta':'نرخ بگرە',
+    'agent-email-lbl':'ئیمەیلی ئەجێنت','agent-pass-lbl':'وشەی نهێنی','agent-login-btn-txt':'چوونە ناو داشبۆرد','agent-logout-btn':'چوونە دەرەوە',
+    'about-h1':'پێشەنگان لە شووشە<br><span style="color:var(--cy)">و پیشەسازی پلاستیک</span>',
+    'about-p':'لە دیوارە پەردەیی تەلارسازی تا شووشەی دیزاینی تەواو — گروپی جازان 48 ڕەنگی شووشە و کوالێتی ISO پێشکەش دەکات.',
+    'about-cat-h':'کتالۆگی 48 ڕەنگ','about-cat-p1':'کتالۆگمان 48 ڕەنگ و دامەزراندن دەگرێتەوە.','about-cat-p2':'هەموو ڕەنگێک لە 4-19مم بەردەستە بۆ بڕین لە ئەم هەفتەدا.',
+    'about-cat-h4':'کتالۆگی ڕەنگی شووشە — 48 جۆر',
+    'about-cnc-h':'بڕینی CNC تەواو','about-cnc-p1':'هەر ئەمرێک لە هێڵی دیجیتاڵمان دەتێپەڕێت.','about-cnc-p2':'تاقیکردنەوەی ±0.1مم. پاسپۆرتی QR بۆ هەر پانێڵێک.',
+    'mach-lbl':'ئامێرەکانی پیشەسازی','mach-title':'ئامێرەکانی بەرهەمهێنان','mach-sub':'ئامێرەکانی جیهانی لە بەرهەمهێنەرانی سەرەکی ئەوروپی.',
+    wa:(w,h,t,tk,qty)=>`سڵاو گروپی جازان 👋\n\nئەمر: ${w}×${h} سم | ${t} ${tk}مم | ${qty} دانە\nتکایە نرخ بنێرە.`,
+    waBH:'سڵاو گروپی جازان 👋\n\nئەمری تەواو:\n',waFT:'کۆی گشتی',waBF:'تکایە بەردەستبوون و نرخەکان پشتڕاست بکەوە. سپاس!'
+  }
+};
+
+function curLangData(){ return TRANSLATIONS[curLang] || TRANSLATIONS.en; }
+function TXT(k){ return (curLangData()[k]) || k; }
+
+function setLang(lang){
+  curLang = lang;
+  const d = curLangData();
+  document.documentElement.setAttribute('dir',  d.dir);
+  document.documentElement.setAttribute('lang', lang);
+  /* Apply RTL font class to body */
+  document.body.classList.toggle('rtl-text', d.dir === 'rtl');
+
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  const btn = document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`);
+  if(btn) btn.classList.add('active');
+
+  for(const [k,v] of Object.entries(d)){
+    if(typeof v !== 'string') continue;
+    const el = document.getElementById(k);
+    if(el) el.innerHTML = v;
+  }
+  renderOrder(); upd();
+}
+
+/* ─────────────── GLASS CATALOGUE ─────────────── */
+let selGlassKey = '10mm-clear';
+const GLASS_CATALOGUE = [
+  {key:'4mm-clear',     mm:4,  name:'Clear',     desc:'Standard float',    swatch:'#B8EEF7', pane:'rgba(0,229,255,.07)'},
+  {key:'4mm-tinted',    mm:4,  name:'Tinted',    desc:'Bronze heat-absorb',swatch:'#8B6914', pane:'rgba(120,80,20,.22)'},
+  {key:'4mm-frosted',   mm:4,  name:'Frosted',   desc:'Acid-etched matte', swatch:'#D8DDE0', pane:'rgba(200,210,220,.18)'},
+  {key:'5mm-clear',     mm:5,  name:'Clear',     desc:'Standard float',    swatch:'#B8EEF7', pane:'rgba(0,229,255,.09)'},
+  {key:'5mm-tinted',    mm:5,  name:'Tinted',    desc:'Grey or bronze',    swatch:'#5A7080', pane:'rgba(60,80,100,.28)'},
+  {key:'5mm-reflective',mm:5,  name:'Reflective',desc:'Silver reflective', swatch:'#C0D8E8', pane:'rgba(160,200,230,.20)'},
+  {key:'6mm-clear',     mm:6,  name:'Clear',     desc:'General-purpose',   swatch:'#B8EEF7', pane:'rgba(0,229,255,.10)'},
+  {key:'6mm-tinted',    mm:6,  name:'Tinted',    desc:'Dark bronze/grey',  swatch:'#7A5A20', pane:'rgba(100,70,20,.28)'},
+  {key:'6mm-frosted',   mm:6,  name:'Frosted',   desc:'Privacy acid-etch', swatch:'#D8DDE0', pane:'rgba(200,210,220,.22)'},
+  {key:'6mm-reflective',mm:6,  name:'Reflective',desc:'Solar-control',     swatch:'#A8C8E0', pane:'rgba(130,180,220,.22)'},
+  {key:'8mm-clear',     mm:8,  name:'Clear',     desc:'Structural float',  swatch:'#B8EEF7', pane:'rgba(0,229,255,.12)'},
+  {key:'8mm-tinted',    mm:8,  name:'Tinted',    desc:'Dark grey/green',   swatch:'#3A6040', pane:'rgba(40,90,50,.30)'},
+  {key:'8mm-laminated', mm:8,  name:'Laminated', desc:'PVB safety layer',  swatch:'#90C890', pane:'rgba(80,180,80,.12)'},
+  {key:'8mm-reflective',mm:8,  name:'Reflective',desc:'Metallic solar',    swatch:'#90B8D0', pane:'rgba(100,160,200,.22)'},
+  {key:'10mm-clear',    mm:10, name:'Clear',     desc:'Premium heavy float',swatch:'#B8EEF7', pane:'rgba(0,229,255,.13)'},
+  {key:'10mm-black',    mm:10, name:'Black',     desc:'Opaque black glass', swatch:'#1A1A1A', pane:'rgba(10,10,10,.70)'},
+  {key:'10mm-tinted',   mm:10, name:'Tinted',    desc:'Deep bronze/grey',  swatch:'#5A4010', pane:'rgba(80,55,10,.38)'},
+  {key:'10mm-laminated',mm:10, name:'Laminated', desc:'Acoustic/safety PVB',swatch:'#90C890', pane:'rgba(80,180,80,.15)'},
+  {key:'10mm-reflective',mm:10,name:'Reflective',desc:'Premium solar-ctrl',swatch:'#80B0D0', pane:'rgba(80,140,200,.25)'},
+];
+const glassLabel = g => g.mm + 'mm ' + g.name;
+
+function buildGlassSelector(){
+  const wrap = document.getElementById('glassSelectorWrap');
+  if(!wrap) return;
+  wrap.innerHTML = '';
+  GLASS_CATALOGUE.forEach(g => {
+    const d = document.createElement('div');
+    d.className = 'gs-card' + (g.key === selGlassKey ? ' sel' : '');
+    d.onclick = () => { selGlassKey = g.key; buildGlassSelector(); upd(); };
+    d.innerHTML = `<div class="gs-thick">${g.mm}<span style="font-size:13px;font-weight:400;color:var(--txt2)">mm</span></div>
+      <div class="gs-name"><span class="gs-swatch" style="background:${g.swatch}"></span>${g.name}</div>
+      <div class="gs-desc">${g.desc}</div>`;
+    wrap.appendChild(d);
+  });
+}
+
+/* ─────────────── LIVE PREVIEW ─────────────── */
+function syncR(rId,lId,iId){ const v=document.getElementById(rId).value; document.getElementById(lId).textContent=v; document.getElementById(iId).value=v; }
+function syncI(iId,lId,rId){
+  const r=document.getElementById(rId); let v=parseInt(document.getElementById(iId).value)||0;
+  v=Math.min(Math.max(v,parseInt(r.min)),parseInt(r.max));
+  document.getElementById(lId).textContent=v; r.value=v;
+}
+function upd(){
+  const wEl=document.getElementById('wRange'), hEl=document.getElementById('hRange');
+  if(!wEl||!hEl) return;
+  const w=parseInt(wEl.value)||120, h=parseInt(hEl.value)||240;
+  const qty=parseInt((document.getElementById('qtyIn')||{}).value)||1;
+  const g=GLASS_CATALOGUE.find(x=>x.key===selGlassKey)||GLASS_CATALOGUE[0];
+  document.getElementById('wv').textContent=w;
+  document.getElementById('hv').textContent=h;
+  const area=(w/100)*(h/100), wt=area*(g.mm/10)*2.5, total=area*qty;
+  document.getElementById('sv1').innerHTML=area.toFixed(2)+' <span class="spec-unit">m²</span>';
+  document.getElementById('sv2').innerHTML=wt.toFixed(1)+' <span class="spec-unit">kg</span>';
+  document.getElementById('sv3').textContent=glassLabel(g);
+  document.getElementById('sv4').innerHTML=g.mm+' <span class="spec-unit">mm</span>';
+  document.getElementById('sv5').innerHTML=qty+' <span class="spec-unit">pcs</span>';
+  document.getElementById('sv6').innerHTML=total.toFixed(2)+' <span class="spec-unit">m²</span>';
+  document.getElementById('gpLabel').textContent=w+'×'+h+' cm';
+  const stage=document.getElementById('stage');
+  if(!stage) return;
+  const stW=stage.clientWidth||340, stH=stage.clientHeight||255;
+  const maxW=stW*.72, maxH=stH*.72, ratio=w/h;
+  let pw,ph;
+  if(w/maxW>h/maxH){pw=maxW;ph=maxW/ratio;}else{ph=maxH;pw=maxH*ratio;}
+  pw=Math.max(44,Math.min(pw,maxW)); ph=Math.max(44,Math.min(ph,maxH));
+  const pane=document.getElementById('gpane');
+  pane.style.width=Math.round(pw)+'px'; pane.style.height=Math.round(ph)+'px';
+  pane.style.background=g.pane;
+}
+
+/* ─────────────── ORDER LIST ─────────────── */
+let orderList=[], nextId=1;
+function addItem(){
+  const w=parseInt(document.getElementById('wIn').value)||0;
+  const h=parseInt(document.getElementById('hIn').value)||0;
+  const qty=parseInt(document.getElementById('qtyIn').value)||1;
+  if(w<10||h<10){ showToast(TXT('toast-dim')); return; }
+  const g=GLASS_CATALOGUE.find(x=>x.key===selGlassKey)||GLASS_CATALOGUE[0];
+  orderList.push({id:nextId++,glassKey:g.key,glassLabel:glassLabel(g),swatch:g.swatch,mm:g.mm,w,h,qty,area:(w/100)*(h/100)});
+  renderOrder(); showToast(TXT('toast-added'));
+  document.getElementById('orderSection').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function removeItem(id){ orderList=orderList.filter(x=>x.id!==id); renderOrder(); }
+function changeQty(id,d){ const it=orderList.find(x=>x.id===id); if(it){it.qty=Math.max(1,it.qty+d); renderOrder();} }
+function clearOrder(){ if(!orderList.length) return; orderList=[]; renderOrder(); }
+
+function renderOrder(){
+  const container=document.getElementById('orderContainer');
+  if(!container) return;
+  const T=curLangData();
+  if(!orderList.length){
+    container.innerHTML=`<div class="order-empty"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h4"/></svg><p>${T['ord-empty']||'No items yet.'}</p></div>`;
+    return;
+  }
+  let totalArea=0,totalPcs=0;
+  orderList.forEach(it=>{totalArea+=it.area*it.qty;totalPcs+=it.qty;});
+  let rows='';
+  orderList.forEach((it,idx)=>{
+    rows+=`<tr style="animation-delay:${idx*.04}s">
+      <td><div class="td-glass"><span class="td-swatch" style="background:${it.swatch}"></span>${it.glassLabel}</div></td>
+      <td><span class="td-dim">${it.w} × ${it.h}</span><br><span style="font-size:11px;color:var(--txt3)">cm</span></td>
+      <td><div class="qty-ctrl"><button class="qty-btn" onclick="changeQty(${it.id},-1)">−</button><span class="qty-num">${it.qty}</span><button class="qty-btn" onclick="changeQty(${it.id},+1)">+</button></div></td>
+      <td><span style="font-size:12px;color:var(--txt2)">${(it.area*it.qty).toFixed(2)} m²</span></td>
+      <td><button class="td-del" onclick="removeItem(${it.id})">${T['del-btn']||'Remove'}</button></td></tr>`;
+  });
+  container.innerHTML=`<div class="order-table-wrap"><table class="order-table"><thead><tr>
+    <th>${T['th-glass']||'Glass'}</th><th>${T['th-dims']||'Dims'}</th>
+    <th>${T['th-qty']||'Qty'}</th><th>${T['th-area']||'Area'}</th><th></th>
+    </tr></thead><tbody>${rows}</tbody></table>
+    <div class="order-footer">
+    <div><div class="order-total-label">${T['total-label']||'ORDER TOTAL'}</div>
+    <div class="order-total-val">${totalPcs} pcs &nbsp;·&nbsp; ${totalArea.toFixed(2)} m²</div></div>
+    <div class="order-actions">
+      <button class="btn-print" onclick="printOrder()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg><span>${T['btn-print']||'Print'}</span></button>
+      <button class="btn-wa-bulk" onclick="sendBulkWA()"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span>${T['btn-wa-bulk']||'Send via WhatsApp'}</span></button>
+      <button class="btn-clear" onclick="clearOrder()">${T['btn-clear']||'Clear All'}</button>
+    </div></div></div>`;
+}
+
+function printOrder(){
+  if(!orderList.length){showToast(TXT('toast-empty'));return;}
+  const d=new Date();
+  document.getElementById('printDate').textContent='Date: '+d.toLocaleDateString()+'  |  '+d.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
+  window.print();
+}
+function sendBulkWA(){
+  if(!orderList.length){showToast(TXT('toast-empty'));return;}
+  const T=curLangData(); let totalArea=0,totalPcs=0;
+  orderList.forEach(it=>{totalArea+=it.area*it.qty;totalPcs+=it.qty;});
+  let msg=(T.waBH)+'\n';
+  orderList.forEach((it,i)=>{msg+=`${i+1}. ${it.glassLabel}\n   📐 ${it.w}×${it.h} cm  🔢 ${it.qty} pcs  📦 ${(it.area*it.qty).toFixed(2)} m²\n\n`;});
+  msg+=`─────────────\n${T.waFT}: ${totalPcs} pcs  |  ${totalArea.toFixed(2)} m²\n\n${T.waBF}`;
+  window.open('https://wa.me/'+WA_NUM+'?text='+encodeURIComponent(msg),'_blank');
+}
+function openWADirect(){ window.open('https://wa.me/'+WA_NUM,'_blank'); }
+
+/* ─────────────── TOAST ─────────────── */
+let _tt;
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  clearTimeout(_tt); _tt=setTimeout(()=>t.classList.remove('show'),2800);
+}
+
+/* ═══════════════════════════════════════════════════════
+   CUTTING PLAN OPTIMIZER — MAXRECTS BSSF
+   
+   BUG FIX: Canvas previously failed because offsetWidth=0
+   when .cut-results was display:none. The fix is to:
+   1. Make .cut-results visible BEFORE building canvases
+   2. Force a layout reflow
+   3. Then measure container width and draw
+═══════════════════════════════════════════════════════ */
+const SHEET_SIZES = [
+  {key:'3210x2250',label:'3210 × 2250',w:3210,h:2250,note:'Standard'},
+  {key:'3210x6000',label:'3210 × 6000',w:3210,h:6000,note:'Long'},
+  {key:'3210x2500',label:'3210 × 2500',w:3210,h:2500,note:'Wide'},
+  {key:'3210x4800',label:'3210 × 4800',w:3210,h:4800,note:'Extra Long'},
+  {key:'3210x4600',label:'3210 × 4600',w:3210,h:4600,note:'XL'},
+];
+let selSheetKey = '3210x2250';
+const KERF = 4;
+const PIECE_COLOURS = [
+  ['#00E5FF','rgba(0,229,255,.22)'],['#FFD600','rgba(255,214,0,.22)'],
+  ['#69FF7D','rgba(105,255,125,.22)'],['#FF6EC7','rgba(255,110,199,.22)'],
+  ['#B8A4FF','rgba(184,164,255,.22)'],['#FF9040','rgba(255,144,64,.22)'],
+  ['#40D0FF','rgba(64,208,255,.22)'],['#FF5555','rgba(255,85,85,.22)'],
+  ['#40DDB8','rgba(64,221,184,.22)'],['#C8FF70','rgba(200,255,112,.22)'],
+];
+
+function buildSheetSelector(){
+  const wrap = document.getElementById('sheetSelector');
+  if(!wrap) return;
+  wrap.innerHTML = '';
+  SHEET_SIZES.forEach(s => {
+    const p = document.createElement('button');
+    p.className = 'sheet-pill' + (s.key === selSheetKey ? ' sel' : '');
+    p.onclick = () => { selSheetKey = s.key; buildSheetSelector(); };
+    p.innerHTML = `${s.label}<span style="font-size:10px;opacity:.55;margin-inline-start:5px">(${s.note})</span>`;
+    wrap.appendChild(p);
+  });
+}
+
+function applyCustomSheet(){
+  const cw = parseInt(document.getElementById('customW').value);
+  const ch = parseInt(document.getElementById('customH').value);
+  if(!cw || !ch || cw < 100 || ch < 100){ showToast('Enter valid dimensions (min 100mm each)'); return; }
+  const key = `custom_${cw}x${ch}`;
+  /* Remove any previous custom entry */
+  const existing = SHEET_SIZES.findIndex(s => s.key.startsWith('custom_'));
+  if(existing >= 0) SHEET_SIZES.splice(existing, 1);
+  SHEET_SIZES.push({key, label:`${cw} × ${ch}`, w:cw, h:ch, note:'Custom'});
+  selSheetKey = key;
+  buildSheetSelector();
+  showToast(`Custom sheet ${cw}×${ch}mm applied`);
+}
+
+/* MAXRECTS bin-packer (Best Short-Side Fit) */
+function maxRectsPack(SW, SH, inputPieces){
+  const queue = inputPieces.slice().sort((a,b)=>(b.w*b.h)-(a.w*a.h));
+  const sheets = [];
+  while(queue.length > 0){
+    const freeRects = [{x:0,y:0,w:SW,h:SH}], placed=[], deferred=[];
+    for(let pi=0; pi<queue.length; pi++){
+      const piece=queue[pi], pw=piece.w, ph=piece.h;
+      let bestScore=Infinity, bestFr=-1, bestRot=false;
+      for(let fi=0; fi<freeRects.length; fi++){
+        const fr=freeRects[fi];
+        if(pw<=fr.w&&ph<=fr.h){ const s=Math.min(fr.w-pw,fr.h-ph); if(s<bestScore){bestScore=s;bestFr=fi;bestRot=false;} }
+        if(ph<=fr.w&&pw<=fr.h){ const s=Math.min(fr.w-ph,fr.h-pw); if(s<bestScore){bestScore=s;bestFr=fi;bestRot=true;} }
+      }
+      if(bestFr===-1){ deferred.push(piece); continue; }
+      const fr=freeRects[bestFr], usedW=bestRot?ph:pw, usedH=bestRot?pw:ph;
+      const p={x:fr.x,y:fr.y,w:usedW,h:usedH,dispW:bestRot?piece.dispH:piece.dispW,dispH:bestRot?piece.dispW:piece.dispH,rotated:bestRot,label:piece.label,colIdx:piece.colIdx};
+      placed.push(p);
+      const newFree=[];
+      for(let fi=0; fi<freeRects.length; fi++){
+        const r=freeRects[fi];
+        if(p.x>=r.x+r.w||p.x+p.w<=r.x||p.y>=r.y+r.h||p.y+p.h<=r.y){newFree.push(r);continue;}
+        if(p.x>r.x)         newFree.push({x:r.x,y:r.y,w:p.x-r.x,h:r.h});
+        if(p.x+p.w<r.x+r.w) newFree.push({x:p.x+p.w,y:r.y,w:(r.x+r.w)-(p.x+p.w),h:r.h});
+        if(p.y>r.y)         newFree.push({x:r.x,y:r.y,w:r.w,h:p.y-r.y});
+        if(p.y+p.h<r.y+r.h) newFree.push({x:r.x,y:p.y+p.h,w:r.w,h:(r.y+r.h)-(p.y+p.h)});
+      }
+      const pruned=[];
+      for(let i=0; i<newFree.length; i++){
+        let dom=false;
+        for(let j=0; j<newFree.length; j++){
+          if(i===j) continue;
+          const a=newFree[i],b=newFree[j];
+          if(b.x<=a.x&&b.y<=a.y&&b.x+b.w>=a.x+a.w&&b.y+b.h>=a.y+a.h){dom=true;break;}
+        }
+        if(!dom) pruned.push(newFree[i]);
+      }
+      freeRects.length=0;
+      pruned.forEach(r=>{if(r.w>=KERF*2&&r.h>=KERF*2)freeRects.push(r);});
+    }
+    sheets.push({placed,freeRects});
+    if(deferred.length===queue.length){ deferred.forEach(d=>d.oversized=true); break; }
+    queue.length=0; deferred.forEach(d=>queue.push(d));
+  }
+  return sheets;
+}
+
+/* ── Canvas renderer — reliable sizing fix ── */
+function drawCanvas(canvas, sheet, SW, SH){
+  /* 
+     KEY FIX: We pass an explicit containerWidth instead of reading
+     canvas.parentElement.offsetWidth, which was 0 when the parent
+     was newly made visible. The caller measures AFTER reflow.
+  */
+  const containerWidth = canvas.getAttribute('data-container-width');
+  const maxW = Math.max(320, Math.min(parseInt(containerWidth)||800, 1100));
+  const PAD = 40;
+  const scale = (maxW - PAD) / SW;
+  const cvW = Math.round(SW * scale) + PAD;
+  const cvH = Math.round(SH * scale) + PAD;
+
+  canvas.width  = cvW;
+  canvas.height = cvH;
+  canvas.style.width  = cvW + 'px';
+  canvas.style.height = cvH + 'px';
+
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, cvW, cvH);
+
+  /* helpers */
+  const cx = x => PAD + Math.round(x * scale);
+  const cy = y => PAD + Math.round(y * scale);
+  const cw = d => Math.max(1, Math.round(d * scale));
+
+  /* ── Background ── */
+  ctx.fillStyle = '#050E1C';
+  ctx.fillRect(0, 0, cvW, cvH);
+  ctx.fillStyle = 'rgba(0,229,255,.04)';
+  ctx.fillRect(0, 0, PAD, cvH);
+  ctx.fillRect(0, 0, cvW, PAD);
+
+  /* ── Grid ── */
+  ctx.setLineDash([2,5]); ctx.lineWidth = 0.5; ctx.strokeStyle = 'rgba(0,229,255,.1)';
+  const gridStep = 200;
+  for(let x=0; x<=SW; x+=gridStep){ ctx.beginPath(); ctx.moveTo(cx(x),PAD); ctx.lineTo(cx(x),cvH); ctx.stroke(); }
+  for(let y=0; y<=SH; y+=gridStep){ ctx.beginPath(); ctx.moveTo(PAD,cy(y)); ctx.lineTo(cvW,cy(y)); ctx.stroke(); }
+  ctx.setLineDash([]);
+
+  /* ── Ruler ticks & labels ── */
+  const tf = Math.max(8, Math.min(11, Math.round(PAD * 0.28)));
+  ctx.fillStyle = 'rgba(0,229,255,.6)';
+  ctx.strokeStyle = 'rgba(0,229,255,.4)';
+  ctx.lineWidth = 0.8;
+  ctx.font = `${tf}px "Exo 2",sans-serif`;
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+
+  for(let x=0; x<=SW; x+=gridStep){
+    const px = cx(x);
+    ctx.beginPath(); ctx.moveTo(px, PAD-6); ctx.lineTo(px, PAD); ctx.stroke();
+    if(x > 0 && x < SW) ctx.fillText(x, px, PAD/2);
+  }
+  for(let y=0; y<=SH; y+=gridStep){
+    const py = cy(y);
+    ctx.beginPath(); ctx.moveTo(PAD-6, py); ctx.lineTo(PAD, py); ctx.stroke();
+    if(y > 0 && y < SH){ ctx.save(); ctx.translate(PAD/2, py); ctx.rotate(-Math.PI/2); ctx.fillText(y, 0, 0); ctx.restore(); }
+  }
+  /* Sheet dimensions in ruler area */
+  ctx.fillStyle = 'rgba(0,229,255,.4)';
+  ctx.font = `${Math.max(7,tf-1)}px "Exo 2",sans-serif`;
+  ctx.fillText(SW+'mm', cx(SW/2), PAD/2);
+  ctx.save(); ctx.translate(PAD/2, cy(SH/2)); ctx.rotate(-Math.PI/2); ctx.fillText(SH+'mm', 0, 0); ctx.restore();
+
+  /* ── Waste area hatch (drawn first, behind pieces) ── */
+  ctx.save();
+  ctx.beginPath(); ctx.rect(PAD, PAD, cw(SW), cw(SH)); ctx.clip();
+  ctx.strokeStyle = 'rgba(255,60,60,.06)'; ctx.lineWidth = 1;
+  const hs = 16;
+  for(let d = -(cvH); d < cvW+cvH; d += hs){
+    ctx.beginPath(); ctx.moveTo(PAD+d, PAD); ctx.lineTo(PAD+d+cvH, PAD+cvH); ctx.stroke();
+  }
+  ctx.restore();
+
+  /* ── Sheet border ── */
+  ctx.strokeStyle = 'rgba(0,229,255,.6)'; ctx.lineWidth = 1.5;
+  ctx.strokeRect(PAD+0.75, PAD+0.75, cw(SW)-1.5, cw(SH)-1.5);
+
+  /* ── Draw each placed piece ── */
+  sheet.placed.forEach(p => {
+    const px = cx(p.x), py = cy(p.y);
+    const pw = cw(p.w), ph = cw(p.h);
+    const col = PIECE_COLOURS[p.colIdx % PIECE_COLOURS.length];
+
+    /* Fill with clipping to prevent overflow */
+    ctx.save();
+    ctx.beginPath(); ctx.rect(px, py, pw, ph); ctx.clip();
+    ctx.fillStyle = col[1];
+    ctx.fillRect(px, py, pw, ph);
+    /* Subtle inner hatch */
+    ctx.strokeStyle = col[0]; ctx.globalAlpha = 0.07; ctx.lineWidth = 1;
+    for(let d = -ph; d < pw+ph; d += 14){
+      ctx.beginPath(); ctx.moveTo(px+d, py); ctx.lineTo(px+d+ph, py+ph); ctx.stroke();
+    }
+    ctx.globalAlpha = 1;
+    ctx.restore();
+
+    /* Border */
+    ctx.strokeStyle = col[0]; ctx.lineWidth = 1.5;
+    ctx.strokeRect(px+0.75, py+0.75, pw-1.5, ph-1.5);
+
+    /* Corner bracket marks */
+    const bl = Math.max(5, Math.min(16, pw*0.12, ph*0.12));
+    ctx.lineWidth = 1.5;
+    [[px,py,1,1],[px+pw,py,-1,1],[px,py+ph,1,-1],[px+pw,py+ph,-1,-1]].forEach(([bx,by,dx,dy]) => {
+      ctx.beginPath(); ctx.moveTo(bx+dx*bl, by); ctx.lineTo(bx, by); ctx.lineTo(bx, by+dy*bl); ctx.stroke();
+    });
+
+    /* Dimension label inside the piece */
+    const minSide = Math.min(pw, ph);
+    const fs = Math.max(8, Math.min(14, Math.round(minSide * 0.13)));
+    ctx.fillStyle = col[0];
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    const mx = px + pw/2, my = py + ph/2;
+    const dimStr = p.dispW + '×' + p.dispH + (p.rotated ? ' ↻' : '');
+    if(ph >= fs*3.5 && pw >= 50){
+      ctx.font = `bold ${fs}px "Exo 2",sans-serif`;
+      ctx.fillText(p.label, mx, my - fs*0.8);
+      ctx.globalAlpha = 0.85;
+      ctx.font = `${fs-1}px "Exo 2",sans-serif`;
+      ctx.fillText(dimStr, mx, my + fs*0.8);
+      ctx.globalAlpha = 1;
+    } else if(pw >= 40 && ph >= 18){
+      ctx.font = `bold ${Math.max(7,fs-1)}px "Exo 2",sans-serif`;
+      ctx.fillText(dimStr, mx, my);
+    }
+  });
+
+  /* ── Efficiency overlay bottom-right ── */
+  const usedArea = sheet.placed.reduce((s,p) => s + p.w*p.h, 0);
+  const effPct  = (usedArea / (SW*SH) * 100).toFixed(1);
+  const wastePct= (100 - parseFloat(effPct)).toFixed(1);
+  const oW = Math.min(170, cw(SW)*0.35), oH = 44;
+  const oX = PAD + cw(SW) - 2, oY = PAD + cw(SH) - 2;
+  ctx.fillStyle = 'rgba(3,12,24,.88)';
+  ctx.fillRect(oX-oW, oY-oH, oW, oH);
+  ctx.strokeStyle = 'rgba(0,229,255,.3)'; ctx.lineWidth = 1;
+  ctx.strokeRect(oX-oW, oY-oH, oW, oH);
+  ctx.textAlign = 'center';
+  ctx.font = `bold ${Math.max(9,Math.round(oH*.28))}px "Exo 2",sans-serif`;
+  ctx.fillStyle = '#4DFFB0';
+  ctx.fillText('✓ ' + effPct + '%  used',  oX-oW/2, oY-oH*.65);
+  ctx.font = `${Math.max(8,Math.round(oH*.22))}px "Exo 2",sans-serif`;
+  ctx.fillStyle = '#FF6B6B';
+  ctx.fillText('✗ ' + wastePct + '%  waste', oX-oW/2, oY-oH*.28);
+}
+
+function generateCuttingPlan(){
+  if(!orderList.length){ showToast(TXT('toast-empty')); return; }
+
+  const sheet = SHEET_SIZES.find(s=>s.key===selSheetKey) || SHEET_SIZES[0];
+  const sheetArea = sheet.w * sheet.h;
+  const pieces=[], oversize=[];
+  let nextCol=0; const colMap={};
+
+  orderList.forEach(item => {
+    const wMM = item.w*10, hMM = item.h*10;
+    if(!Object.prototype.hasOwnProperty.call(colMap, item.glassKey)){
+      colMap[item.glassKey] = nextCol++ % PIECE_COLOURS.length;
+    }
+    const ci = colMap[item.glassKey];
+    for(let i=0; i<item.qty; i++){
+      const wK=wMM+KERF, hK=hMM+KERF;
+      const fits = (wK<=sheet.w&&hK<=sheet.h)||(hK<=sheet.w&&wK<=sheet.h);
+      if(!fits){ oversize.push(item); continue; }
+      pieces.push({w:wK,h:hK,dispW:wMM,dispH:hMM,label:item.glassLabel,colIdx:ci,glassKey:item.glassKey});
+    }
+  });
+
+  const sheets = maxRectsPack(sheet.w, sheet.h, pieces);
+  const totalSheets=sheets.length, totalSheetArea=totalSheets*sheetArea;
+  let totalUsed=0, totalPieces=0;
+  sheets.forEach(sh => sh.placed.forEach(p=>{ totalUsed+=p.w*p.h; totalPieces++; }));
+  const effPct = totalSheetArea > 0 ? (totalUsed/totalSheetArea*100) : 0;
+  const wastePct = 100 - effPct;
+
+  /* Stats cards */
+  const sc=(lbl,val,cls,sty)=>
+    `<div class="cut-stat-card ${cls||''}"><div class="cut-stat-num" ${sty?`style="${sty}"`:''}>${val}</div><div class="cut-stat-lbl">${lbl}</div></div>`;
+  document.getElementById('cutStats').innerHTML =
+    sc('SHEETS NEEDED',    totalSheets, '') +
+    sc('PIECES PLACED',    totalPieces, '') +
+    sc('GLASS USED',       effPct.toFixed(1)+'%',  '', 'color:#4DFFB0') +
+    sc('WASTE',            wastePct.toFixed(1)+'%','waste') +
+    sc('SHEET SIZE',       sheet.w+'×'+sheet.h+'mm','') +
+    sc('KERF',             KERF+'mm/cut','') +
+    (oversize.length ? sc('OVERSIZE (EXCL.)', oversize.length, 'waste') : '');
+
+  /* Legend */
+  let leg = '';
+  Object.entries(colMap).forEach(([key,ci]) => {
+    const it = orderList.find(x=>x.glassKey===key); if(!it) return;
+    const [stroke,fill] = PIECE_COLOURS[ci % PIECE_COLOURS.length];
+    leg += `<div class="cut-legend-item"><span class="cut-legend-dot" style="background:${fill};border:1.5px solid ${stroke}"></span>${it.glassLabel}</div>`;
+  });
+  if(oversize.length) leg += `<div class="cut-legend-item" style="color:#FF6B6B"><span class="cut-legend-dot" style="background:rgba(255,80,80,.15);border:1.5px solid #FF6B6B"></span>⚠ Oversize pieces excluded</div>`;
+  document.getElementById('cutLegend').innerHTML = leg;
+
+  /* Build sheet DOM */
+  const sw = document.getElementById('cutSheetsWrap');
+  sw.innerHTML = '';
+  sheets.forEach((sh,idx) => {
+    const shUsed  = sh.placed.reduce((s,p)=>s+p.w*p.h,0);
+    const shEff   = (shUsed/sheetArea*100).toFixed(1);
+    const shWaste = (100-shEff).toFixed(1);
+    const block = document.createElement('div');
+    block.className = 'cut-sheet-block';
+    block.innerHTML = `
+      <div class="cut-sheet-header">
+        <div class="cut-sheet-title">Sheet ${idx+1} of ${totalSheets} — ${sheet.label}mm</div>
+        <div class="cut-sheet-meta">
+          <span style="color:#4DFFB0;font-weight:700">${shEff}% used</span>&nbsp;·&nbsp;
+          <span style="color:#FF6B6B;font-weight:700">${shWaste}% waste</span>&nbsp;·&nbsp;
+          ${sh.placed.length} pieces
+        </div>
+      </div>
+      <div class="cut-canvas-wrap"><canvas class="cut-canvas" id="cutCanvas_${idx}"></canvas></div>`;
+    sw.appendChild(block);
+  });
+
+  /* 
+    CRITICAL FIX:
+    Step 1: Make results visible (triggers layout calculation)
+    Step 2: Reflow via offsetHeight read
+    Step 3: Measure actual container width
+    Step 4: Store on canvas as data attribute
+    Step 5: Draw
+  */
+  const results = document.getElementById('cutResults');
+  results.classList.add('visible');
+  results.scrollIntoView({behavior:'smooth', block:'start'});
+
+  /* Force reflow so DOM is painted and has dimensions */
+  void results.offsetHeight;
+
+  /* Now measure and draw each canvas */
+  function drawAllCanvases(){
+    sheets.forEach((sh,idx) => {
+      const canvas = document.getElementById('cutCanvas_'+idx);
+      if(!canvas) return;
+      /* Measure container AFTER it's visible */
+      const wrap = canvas.parentElement;
+      const containerW = wrap.getBoundingClientRect().width || wrap.offsetWidth || 800;
+      canvas.setAttribute('data-container-width', Math.floor(containerW));
+      drawCanvas(canvas, sh, sheet.w, sheet.h);
+    });
+  }
+
+  /* Use a small delay to ensure the scroll animation doesn't interfere with measurements */
+  setTimeout(drawAllCanvases, 120);
+}
+
+/* ─────────────── AGENT ─────────────── */
+const AGENT_CREDS = {email:'agent@jazangroup.com', password:'jazan2025'};
+function agentLogin(){
+  const email = document.getElementById('agentEmail').value.trim();
+  const pass  = document.getElementById('agentPass').value;
+  if(!email||!pass){ showToast('Please enter your credentials.'); return; }
+  if(email===AGENT_CREDS.email && pass===AGENT_CREDS.password){
+    document.getElementById('agentLoginWrap').style.display = 'none';
+    document.getElementById('agentDashWrap').style.display  = 'block';
+    const name = email.split('@')[0];
+    document.getElementById('agentWelcome').textContent = 'Welcome back, ' + name.charAt(0).toUpperCase()+name.slice(1);
+    const now = new Date();
+    document.getElementById('loginTime').textContent = now.toLocaleDateString()+' at '+now.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
+  } else {
+    showToast('Invalid credentials. Use: agent@jazangroup.com / jazan2025');
+  }
+}
+function agentLogout(){
+  document.getElementById('agentLoginWrap').style.display = 'block';
+  document.getElementById('agentDashWrap').style.display  = 'none';
+  document.getElementById('agentEmail').value = '';
+  document.getElementById('agentPass').value  = '';
+}
+
+/* ─────────────── ABOUT: COLOR SWATCHES ─────────────── */
+const COLOR_CATALOG = [
+  {n:'Ultra Clear',h:'#D4F5FC'},{n:'Standard Clear',h:'#B8EEF7'},{n:'Bronze Light',h:'#C8A060'},{n:'Bronze Medium',h:'#A07830'},
+  {n:'Bronze Dark',h:'#7A5518'},{n:'Grey Light',h:'#A8B8C0'},{n:'Grey Medium',h:'#7A8C94'},{n:'Grey Dark',h:'#4A5C64'},
+  {n:'Green Light',h:'#8FC890'},{n:'Green Medium',h:'#5A9860'},{n:'Green Dark',h:'#2A6830'},{n:'Blue Tint',h:'#4890C8'},
+  {n:'Deep Blue',h:'#1850A0'},{n:'Midnight Blue',h:'#0C2860'},{n:'Aqua',h:'#40C8C0'},{n:'Teal',h:'#108888'},
+  {n:'Frosted Clear',h:'#E8EEF0'},{n:'Frosted Grey',h:'#C0C8CC'},{n:'Frosted Warm',h:'#E8E0D4'},{n:'Acid Etch White',h:'#F0F0F0'},
+  {n:'Reflective Silver',h:'#C0D8E8'},{n:'Reflective Gold',h:'#E8C840'},{n:'Reflective Blue',h:'#80B0D8'},{n:'Reflective Green',h:'#80C0A0'},
+  {n:'Black Opaque',h:'#1A1A1A'},{n:'Charcoal',h:'#383838'},{n:'Dark Smoke',h:'#505050'},{n:'White Opaque',h:'#F8F8F8'},
+  {n:'Cream',h:'#F0E8D8'},{n:'Ivory',h:'#ECDFC8'},{n:'Rose',h:'#E8A8A8'},{n:'Blush Pink',h:'#F0C0C0'},
+  {n:'Coral',h:'#E87050'},{n:'Amber',h:'#D89020'},{n:'Gold',h:'#C8A000'},{n:'Champagne',h:'#E0C880'},
+  {n:'Silver Mirror',h:'#E0E8F0'},{n:'Bronze Mirror',h:'#C0A870'},{n:'Rainbow Film',h:'#A890E8'},{n:'Iridescent',h:'#C0D0F8'},
+  {n:'Low-E Clear',h:'#C8E8F4'},{n:'Low-E Green',h:'#A8D0B0'},{n:'Solar Blue',h:'#6090C0'},{n:'Solar Green',h:'#509060'},
+  {n:'Printed White',h:'#FCFCFC'},{n:'Printed Black',h:'#202020'},{n:'Sand Blasted',h:'#D8D0C4'},{n:'Pattern Etch',h:'#D0D8DC'},
+];
+function buildColorSwatches(){
+  const wrap = document.getElementById('swatchesGrid');
+  if(!wrap || wrap.childElementCount > 0) return;
+  COLOR_CATALOG.forEach(c => {
+    const d = document.createElement('div');
+    d.className = 'swatch-item';
+    d.style.background = c.h;
+    d.innerHTML = `<div class="swatch-tip">${c.n}</div>`;
+    wrap.appendChild(d);
+  });
+}
+
+/* ─────────────── INIT ─────────────── */
+buildGlassSelector();
+buildSheetSelector();
+renderOrder();
+setTimeout(upd, 100);
+window.addEventListener('resize', upd);
+</script>
+</body>
+</html>
